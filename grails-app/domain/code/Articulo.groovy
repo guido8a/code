@@ -28,8 +28,9 @@ class Articulo {
             texto           column: 'artctxto'
             fecha           column: 'artcfcha'
             imagen          column: 'artcimgn'
-            metaDescripcion column: 'artcmtpg'
+            metaDescripcion column: 'artcmeta'
             estado          column: 'artcetdo'
+            orden           column: 'artcordn'
         }
     }
     static constraints = {
