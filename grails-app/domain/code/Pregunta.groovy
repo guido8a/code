@@ -1,21 +1,21 @@
 package code
 
-class Preg {
-    Sccn sccn
+class Pregunta {
+    Articulo articulo
     Date   fecha
     String pregunta
     String respuesta
     String estado
 
     static mapping = {
-        table: 'preg'
+        table 'preg'
         cache usage:'read-write', include:'non-lazy'
         version false
         id generator: 'identity'
 
         columns {
             id        column: 'preg__id'
-            sccn      column: 'sccn__id'
+            articulo  column: 'artc__id'
             fecha     column: 'pregfcha'
             pregunta  column: 'pregtxto'
             respuesta column: 'pregresp'
@@ -26,6 +26,7 @@ class Preg {
 
     static constraints = {
         pregunta(blank:false,size:10..1023)
+        respuesta(blank:true,size:10..1023)
         estado(blank:false,size:1..1)
     }
 
