@@ -19,7 +19,7 @@ class Layout {
 
 
     static constraints = {
-        codigo(blank:false,size:4..7)
+        codigo(blank:false,size:4..4)
         descripcion(blank:false,size:0..255)
     }
 
