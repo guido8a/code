@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Agency - Start Bootstrap Theme</title>
+	<title>TEDEIN - Tecnología para el desarrollo integral</title>
 
 	<!-- Bootstrap Core CSS -->
 	%{--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">--}%

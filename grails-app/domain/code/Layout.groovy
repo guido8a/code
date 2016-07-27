@@ -12,7 +12,7 @@ class Layout {
 
         columns {
             id          column: 'layt__id'
-            codigo      column: 'laytnmbr'
+            codigo      column: 'laytcdgo'
             descripcion column: 'laytdscr'
         }
     }
