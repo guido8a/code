@@ -7,7 +7,7 @@ class UrlMappings {
             }
         }
 
-        "/"(controller: 'principal', view:"index")
+        "/"(controller: 'principal', action: "index")
         "500"(view:'/error')
 	}
 }

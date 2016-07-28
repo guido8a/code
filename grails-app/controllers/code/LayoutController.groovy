@@ -4,9 +4,9 @@ import org.springframework.dao.DataIntegrityViolationException
 
 
 /**
- * Controlador que muestra las pantallas de manejo de Articulo
+ * Controlador que muestra las pantallas de manejo de Layout
  */
-class ArticuloController {
+class LayoutController {
 
     static allowedMethods = [save_ajax: "POST", delete_ajax: "POST"]
 
@@ -33,22 +33,17 @@ class ArticuloController {
         }
         def list
         if (params.search) {
-            def c = Articulo.createCriteria()
+            def c = Layout.createCriteria()
             list = c.list(params) {
                 or {
                     /* TODO: cambiar aqui segun sea necesario */
 
+                    ilike("codigo", "%" + params.search + "%")
                     ilike("descripcion", "%" + params.search + "%")
-                    ilike("estado", "%" + params.search + "%")
-                    ilike("imagen", "%" + params.search + "%")
-                    ilike("metaDescripcion", "%" + params.search + "%")
-                    ilike("subtitulo", "%" + params.search + "%")
-                    ilike("texto", "%" + params.search + "%")
-                    ilike("titulo", "%" + params.search + "%")
                 }
             }
         } else {
-            list = Articulo.list(params)
+            list = Layout.list(params)
         }
         if (!all && params.offset.toInteger() > 0 && list.size() == 0) {
             params.offset = params.offset.toInteger() - 1
@@ -59,48 +54,48 @@ class ArticuloController {
 
     /**
      * Acción que muestra la lista de elementos
-     * @return articuloInstanceList: la lista de elementos filtrados, articuloInstanceCount: la cantidad total de elementos (sin máximo)
+     * @return layoutInstanceList: la lista de elementos filtrados, layoutInstanceCount: la cantidad total de elementos (sin máximo)
      */
     def list() {
-        def articuloInstanceList = getList(params, false)
-        def articuloInstanceCount = getList(params, true).size()
-        return [articuloInstanceList: articuloInstanceList, articuloInstanceCount: articuloInstanceCount]
+        def layoutInstanceList = getList(params, false)
+        def layoutInstanceCount = getList(params, true).size()
+        return [layoutInstanceList: layoutInstanceList, layoutInstanceCount: layoutInstanceCount]
     }
 
     /**
      * Acción llamada con ajax que muestra la información de un elemento particular
-     * @return articuloInstance el objeto a mostrar cuando se encontró el elemento
+     * @return layoutInstance el objeto a mostrar cuando se encontró el elemento
      * @render ERROR*[mensaje] cuando no se encontró el elemento
      */
     def show_ajax() {
         if (params.id) {
-            def articuloInstance = Articulo.get(params.id)
-            if (!articuloInstance) {
-                render "ERROR*No se encontró Articulo."
+            def layoutInstance = Layout.get(params.id)
+            if (!layoutInstance) {
+                render "ERROR*No se encontró Layout."
                 return
             }
-            return [articuloInstance: articuloInstance]
+            return [layoutInstance: layoutInstance]
         } else {
-            render "ERROR*No se encontró Articulo."
+            render "ERROR*No se encontró Layout."
         }
     } //show para cargar con ajax en un dialog
 
     /**
      * Acción llamada con ajax que muestra un formaulario para crear o modificar un elemento
-     * @return articuloInstance el objeto a modificar cuando se encontró el elemento
+     * @return layoutInstance el objeto a modificar cuando se encontró el elemento
      * @render ERROR*[mensaje] cuando no se encontró el elemento
      */
     def form_ajax() {
-        def articuloInstance = new Articulo()
+        def layoutInstance = new Layout()
         if (params.id) {
-            articuloInstance = Articulo.get(params.id)
-            if (!articuloInstance) {
-                render "ERROR*No se encontró Articulo."
+            layoutInstance = Layout.get(params.id)
+            if (!layoutInstance) {
+                render "ERROR*No se encontró Layout."
                 return
             }
         }
-        articuloInstance.properties = params
-        return [articuloInstance: articuloInstance]
+        layoutInstance.properties = params
+        return [layoutInstance: layoutInstance]
     } //form para cargar con ajax en un dialog
 
     /**
@@ -108,20 +103,20 @@ class ArticuloController {
      * @render ERROR*[mensaje] cuando no se pudo grabar correctamente, SUCCESS*[mensaje] cuando se grabó correctamente
      */
     def save_ajax() {
-        def articuloInstance = new Articulo()
+        def layoutInstance = new Layout()
         if (params.id) {
-            articuloInstance = Articulo.get(params.id)
-            if (!articuloInstance) {
-                render "ERROR*No se encontró Articulo."
+            layoutInstance = Layout.get(params.id)
+            if (!layoutInstance) {
+                render "ERROR*No se encontró Layout."
                 return
             }
         }
-        articuloInstance.properties = params
-        if (!articuloInstance.save(flush: true)) {
-            render "ERROR*Ha ocurrido un error al guardar Articulo: " + renderErrors(bean: articuloInstance)
+        layoutInstance.properties = params
+        if (!layoutInstance.save(flush: true)) {
+            render "ERROR*Ha ocurrido un error al guardar Layout: " + renderErrors(bean: layoutInstance)
             return
         }
-        render "SUCCESS*${params.id ? 'Actualización' : 'Creación'} de Articulo exitosa."
+        render "SUCCESS*${params.id ? 'Actualización' : 'Creación'} de Layout exitosa."
         return
     } //save para grabar desde ajax
 
@@ -131,23 +126,44 @@ class ArticuloController {
      */
     def delete_ajax() {
         if (params.id) {
-            def articuloInstance = Articulo.get(params.id)
-            if (!articuloInstance) {
-                render "ERROR*No se encontró Articulo."
+            def layoutInstance = Layout.get(params.id)
+            if (!layoutInstance) {
+                render "ERROR*No se encontró Layout."
                 return
             }
             try {
-                articuloInstance.delete(flush: true)
-                render "SUCCESS*Eliminación de Articulo exitosa."
+                layoutInstance.delete(flush: true)
+                render "SUCCESS*Eliminación de Layout exitosa."
                 return
             } catch (DataIntegrityViolationException e) {
-                render "ERROR*Ha ocurrido un error al eliminar Articulo"
+                render "ERROR*Ha ocurrido un error al eliminar Layout"
                 return
             }
         } else {
-            render "ERROR*No se encontró Articulo."
+            render "ERROR*No se encontró Layout."
             return
         }
     } //delete para eliminar via ajax
+
+    /**
+     * Acción llamada con ajax que valida que no se duplique la propiedad codigo
+     * @render boolean que indica si se puede o no utilizar el valor recibido
+     */
+    def validar_unique_codigo_ajax() {
+        params.codigo = params.codigo.toString().trim()
+        if (params.id) {
+            def obj = Layout.get(params.id)
+            if (obj.codigo.toLowerCase() == params.codigo.toLowerCase()) {
+                render true
+                return
+            } else {
+                render Layout.countByCodigoIlike(params.codigo) == 0
+                return
+            }
+        } else {
+            render Layout.countByCodigoIlike(params.codigo) == 0
+            return
+        }
+    }
 
 }

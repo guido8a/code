@@ -2,11 +2,10 @@ package code
 
 import org.springframework.dao.DataIntegrityViolationException
 
-
 /**
- * Controlador que muestra las pantallas de manejo de Articulo
+ * Controlador que muestra las pantallas de manejo de Sitio
  */
-class ArticuloController {
+class SitioController {
 
     static allowedMethods = [save_ajax: "POST", delete_ajax: "POST"]
 
@@ -33,22 +32,18 @@ class ArticuloController {
         }
         def list
         if (params.search) {
-            def c = Articulo.createCriteria()
+            def c = Sitio.createCriteria()
             list = c.list(params) {
                 or {
                     /* TODO: cambiar aqui segun sea necesario */
 
                     ilike("descripcion", "%" + params.search + "%")
                     ilike("estado", "%" + params.search + "%")
-                    ilike("imagen", "%" + params.search + "%")
-                    ilike("metaDescripcion", "%" + params.search + "%")
-                    ilike("subtitulo", "%" + params.search + "%")
-                    ilike("texto", "%" + params.search + "%")
-                    ilike("titulo", "%" + params.search + "%")
+                    ilike("nombre", "%" + params.search + "%")
                 }
             }
         } else {
-            list = Articulo.list(params)
+            list = Sitio.list(params)
         }
         if (!all && params.offset.toInteger() > 0 && list.size() == 0) {
             params.offset = params.offset.toInteger() - 1
@@ -59,48 +54,48 @@ class ArticuloController {
 
     /**
      * Acción que muestra la lista de elementos
-     * @return articuloInstanceList: la lista de elementos filtrados, articuloInstanceCount: la cantidad total de elementos (sin máximo)
+     * @return sitioInstanceList: la lista de elementos filtrados, sitioInstanceCount: la cantidad total de elementos (sin máximo)
      */
     def list() {
-        def articuloInstanceList = getList(params, false)
-        def articuloInstanceCount = getList(params, true).size()
-        return [articuloInstanceList: articuloInstanceList, articuloInstanceCount: articuloInstanceCount]
+        def sitioInstanceList = getList(params, false)
+        def sitioInstanceCount = getList(params, true).size()
+        return [sitioInstanceList: sitioInstanceList, sitioInstanceCount: sitioInstanceCount]
     }
 
     /**
      * Acción llamada con ajax que muestra la información de un elemento particular
-     * @return articuloInstance el objeto a mostrar cuando se encontró el elemento
+     * @return sitioInstance el objeto a mostrar cuando se encontró el elemento
      * @render ERROR*[mensaje] cuando no se encontró el elemento
      */
     def show_ajax() {
         if (params.id) {
-            def articuloInstance = Articulo.get(params.id)
-            if (!articuloInstance) {
-                render "ERROR*No se encontró Articulo."
+            def sitioInstance = Sitio.get(params.id)
+            if (!sitioInstance) {
+                render "ERROR*No se encontró Sitio."
                 return
             }
-            return [articuloInstance: articuloInstance]
+            return [sitioInstance: sitioInstance]
         } else {
-            render "ERROR*No se encontró Articulo."
+            render "ERROR*No se encontró Sitio."
         }
     } //show para cargar con ajax en un dialog
 
     /**
      * Acción llamada con ajax que muestra un formaulario para crear o modificar un elemento
-     * @return articuloInstance el objeto a modificar cuando se encontró el elemento
+     * @return sitioInstance el objeto a modificar cuando se encontró el elemento
      * @render ERROR*[mensaje] cuando no se encontró el elemento
      */
     def form_ajax() {
-        def articuloInstance = new Articulo()
+        def sitioInstance = new Sitio()
         if (params.id) {
-            articuloInstance = Articulo.get(params.id)
-            if (!articuloInstance) {
-                render "ERROR*No se encontró Articulo."
+            sitioInstance = Sitio.get(params.id)
+            if (!sitioInstance) {
+                render "ERROR*No se encontró Sitio."
                 return
             }
         }
-        articuloInstance.properties = params
-        return [articuloInstance: articuloInstance]
+        sitioInstance.properties = params
+        return [sitioInstance: sitioInstance]
     } //form para cargar con ajax en un dialog
 
     /**
@@ -108,20 +103,20 @@ class ArticuloController {
      * @render ERROR*[mensaje] cuando no se pudo grabar correctamente, SUCCESS*[mensaje] cuando se grabó correctamente
      */
     def save_ajax() {
-        def articuloInstance = new Articulo()
+        def sitioInstance = new Sitio()
         if (params.id) {
-            articuloInstance = Articulo.get(params.id)
-            if (!articuloInstance) {
-                render "ERROR*No se encontró Articulo."
+            sitioInstance = Sitio.get(params.id)
+            if (!sitioInstance) {
+                render "ERROR*No se encontró Sitio."
                 return
             }
         }
-        articuloInstance.properties = params
-        if (!articuloInstance.save(flush: true)) {
-            render "ERROR*Ha ocurrido un error al guardar Articulo: " + renderErrors(bean: articuloInstance)
+        sitioInstance.properties = params
+        if (!sitioInstance.save(flush: true)) {
+            render "ERROR*Ha ocurrido un error al guardar Sitio: " + renderErrors(bean: sitioInstance)
             return
         }
-        render "SUCCESS*${params.id ? 'Actualización' : 'Creación'} de Articulo exitosa."
+        render "SUCCESS*${params.id ? 'Actualización' : 'Creación'} de Sitio exitosa."
         return
     } //save para grabar desde ajax
 
@@ -131,21 +126,21 @@ class ArticuloController {
      */
     def delete_ajax() {
         if (params.id) {
-            def articuloInstance = Articulo.get(params.id)
-            if (!articuloInstance) {
-                render "ERROR*No se encontró Articulo."
+            def sitioInstance = Sitio.get(params.id)
+            if (!sitioInstance) {
+                render "ERROR*No se encontró Sitio."
                 return
             }
             try {
-                articuloInstance.delete(flush: true)
-                render "SUCCESS*Eliminación de Articulo exitosa."
+                sitioInstance.delete(flush: true)
+                render "SUCCESS*Eliminación de Sitio exitosa."
                 return
             } catch (DataIntegrityViolationException e) {
-                render "ERROR*Ha ocurrido un error al eliminar Articulo"
+                render "ERROR*Ha ocurrido un error al eliminar Sitio"
                 return
             }
         } else {
-            render "ERROR*No se encontró Articulo."
+            render "ERROR*No se encontró Sitio."
             return
         }
     } //delete para eliminar via ajax
