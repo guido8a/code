@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>TEDEIN - Tecnología para el desarrollo integral</title>
+	<title>TEDEIN</title>
 
 	<!-- Bootstrap Core CSS -->
 	%{--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">--}%
@@ -73,8 +73,6 @@
 	}
 
 	</style>
-
-
 
 </head>
 
