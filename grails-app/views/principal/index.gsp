@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>TEDEIN</title>
+	<title>TEDEIN S.A.</title>
 
 	<!-- Bootstrap Core CSS -->
 	%{--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">--}%
@@ -86,7 +86,7 @@
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
 			</button>
-			<a class="navbar-brand page-scroll" href="#page-top">Tedein</a>
+			<a class="navbar-brand page-scroll" href="#page-top">Tedein S.A.</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -147,12 +147,12 @@
 
 				<div class="row text-center">
 					%{--<div class="col-md-12">--}%
-						%{--<span class="fa-stack fa-4x">--}%
-							%{--<i class="fa fa-circle fa-stack-2x text-primary"></i>--}%
-							%{--<i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>--}%
-						%{--</span>--}%
-						%{--<h4 class="service-heading">${art?.titulo}</h4>--}%
-						%{--<p class="text-muted">${art?.subtitulo}</p>--}%
+					%{--<span class="fa-stack fa-4x">--}%
+					%{--<i class="fa fa-circle fa-stack-2x text-primary"></i>--}%
+					%{--<i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>--}%
+					%{--</span>--}%
+					%{--<h4 class="service-heading">${art?.titulo}</h4>--}%
+					%{--<p class="text-muted">${art?.subtitulo}</p>--}%
 					%{--</div>--}%
 
 
@@ -237,103 +237,103 @@
 %{--</section>--}%
 
 <!-- Portfolio Grid Section -->
-<section id="portfolio" class="bg-light-gray">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2 class="section-heading">Portfolio</h2>
-				<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-plus fa-3x"></i>
-						</div>
-					</div>
-					<img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
-					<img src="${resource(dir: 'agency-theme', file: 'img/portfolio/roundicons.png')}" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Round Icons</h4>
-					<p class="text-muted">Graphic Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-plus fa-3x"></i>
-						</div>
-					</div>
-					<img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Startup Framework</h4>
-					<p class="text-muted">Website Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-plus fa-3x"></i>
-						</div>
-					</div>
-					<img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Treehouse</h4>
-					<p class="text-muted">Website Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-plus fa-3x"></i>
-						</div>
-					</div>
-					<img src="img/portfolio/golden.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Golden</h4>
-					<p class="text-muted">Website Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-plus fa-3x"></i>
-						</div>
-					</div>
-					<img src="img/portfolio/escape.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Escape</h4>
-					<p class="text-muted">Website Design</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-plus fa-3x"></i>
-						</div>
-					</div>
-					<img src="img/portfolio/dreams.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Dreams</h4>
-					<p class="text-muted">Website Design</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+%{--<section id="portfolio" class="bg-light-gray">--}%
+	%{--<div class="container">--}%
+		%{--<div class="row">--}%
+			%{--<div class="col-lg-12 text-center">--}%
+				%{--<h2 class="section-heading">Portfolio</h2>--}%
+				%{--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>--}%
+			%{--</div>--}%
+		%{--</div>--}%
+		%{--<div class="row">--}%
+			%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+				%{--<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">--}%
+					%{--<div class="portfolio-hover">--}%
+						%{--<div class="portfolio-hover-content">--}%
+							%{--<i class="fa fa-plus fa-3x"></i>--}%
+						%{--</div>--}%
+					%{--</div>--}%
+					%{--<img src="img/portfolio/roundicons.png" class="img-responsive" alt="">--}%
+					%{--<img src="${resource(dir: 'agency-theme', file: 'img/portfolio/roundicons.png')}" class="img-responsive" alt="">--}%
+				%{--</a>--}%
+				%{--<div class="portfolio-caption">--}%
+					%{--<h4>Round Icons</h4>--}%
+					%{--<p class="text-muted">Graphic Design</p>--}%
+				%{--</div>--}%
+			%{--</div>--}%
+			%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+				%{--<a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">--}%
+					%{--<div class="portfolio-hover">--}%
+						%{--<div class="portfolio-hover-content">--}%
+							%{--<i class="fa fa-plus fa-3x"></i>--}%
+						%{--</div>--}%
+					%{--</div>--}%
+					%{--<img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">--}%
+				%{--</a>--}%
+				%{--<div class="portfolio-caption">--}%
+					%{--<h4>Startup Framework</h4>--}%
+					%{--<p class="text-muted">Website Design</p>--}%
+				%{--</div>--}%
+			%{--</div>--}%
+			%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+				%{--<a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">--}%
+					%{--<div class="portfolio-hover">--}%
+						%{--<div class="portfolio-hover-content">--}%
+							%{--<i class="fa fa-plus fa-3x"></i>--}%
+						%{--</div>--}%
+					%{--</div>--}%
+					%{--<img src="img/portfolio/treehouse.png" class="img-responsive" alt="">--}%
+				%{--</a>--}%
+				%{--<div class="portfolio-caption">--}%
+					%{--<h4>Treehouse</h4>--}%
+					%{--<p class="text-muted">Website Design</p>--}%
+				%{--</div>--}%
+			%{--</div>--}%
+			%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+				%{--<a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">--}%
+					%{--<div class="portfolio-hover">--}%
+						%{--<div class="portfolio-hover-content">--}%
+							%{--<i class="fa fa-plus fa-3x"></i>--}%
+						%{--</div>--}%
+					%{--</div>--}%
+					%{--<img src="img/portfolio/golden.png" class="img-responsive" alt="">--}%
+				%{--</a>--}%
+				%{--<div class="portfolio-caption">--}%
+					%{--<h4>Golden</h4>--}%
+					%{--<p class="text-muted">Website Design</p>--}%
+				%{--</div>--}%
+			%{--</div>--}%
+			%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+				%{--<a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">--}%
+					%{--<div class="portfolio-hover">--}%
+						%{--<div class="portfolio-hover-content">--}%
+							%{--<i class="fa fa-plus fa-3x"></i>--}%
+						%{--</div>--}%
+					%{--</div>--}%
+					%{--<img src="img/portfolio/escape.png" class="img-responsive" alt="">--}%
+				%{--</a>--}%
+				%{--<div class="portfolio-caption">--}%
+					%{--<h4>Escape</h4>--}%
+					%{--<p class="text-muted">Website Design</p>--}%
+				%{--</div>--}%
+			%{--</div>--}%
+			%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+				%{--<a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">--}%
+					%{--<div class="portfolio-hover">--}%
+						%{--<div class="portfolio-hover-content">--}%
+							%{--<i class="fa fa-plus fa-3x"></i>--}%
+						%{--</div>--}%
+					%{--</div>--}%
+					%{--<img src="img/portfolio/dreams.png" class="img-responsive" alt="">--}%
+				%{--</a>--}%
+				%{--<div class="portfolio-caption">--}%
+					%{--<h4>Dreams</h4>--}%
+					%{--<p class="text-muted">Website Design</p>--}%
+				%{--</div>--}%
+			%{--</div>--}%
+		%{--</div>--}%
+	%{--</div>--}%
+%{--</section>--}%
 
 <!-- About Section -->
 %{--<section id="about">--}%
@@ -512,29 +512,39 @@
 <section id="contact">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-5 text-center">
-				<div class="panel panel-warning">
-					<div class="panel-heading">
-						<h3 class="panel-title" style="text-align: center"> <i class="fa fa-comment"></i> Información de contacto</h3>
-					</div>
-					<div class="panel-group well">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading">Contáctenos</h2>
-				<h3 class="section-subheading text-muted" style="color: #ffffff">
-					Ingrese sus datos personales. <br>Para poder responderle lo más pronto posible, por favor ingrese un correo electrónico o un teléfono válido.
-				</h3>
+
+				<div class="col-lg-3"></div>
+				<div class="col-lg-6 text-center">
+					<div class="panel-group well">
+						<div class="row" style="height: 80px">
+							<label>Dirección:</label>
+							<h3 class="section-subheading text-muted">Rio Coca y Avenida de los Shyris E8 - 138  Quito - Ecuador.</h3>
+						</div>
+						<div class="row" style="height: 80px">
+							<label>Teléfonos:</label>
+							<h3 class="section-subheading text-muted">022 924 427 - 084 916 620.</h3>
+						</div>
+						<div class="row" style="height: 80px">
+							<label>E-mail:</label><h3 class="section-subheading text-muted">soporte@tedein.com.ec, informacion@tedein.com.ec </h3>
+						</div>
+					</div>
+				</div>
+				%{--<div class="clearfix"></div>--}%
+				<div class="col-lg-12 text-center">
+					<h3 class="section-subheading text-muted" style="color: #ffffff">
+						Ingrese sus datos personales. <br>Para poder responderle lo más pronto posible, por favor ingrese un correo electrónico o un teléfono válido.
+					</h3>
+				</div>
+
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
 				<form name="sentMessage" id="contactForm" novalidate>
 					<div class="row">
-						<div class="col-md-5">
+						<div class="col-md-6">
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="Nombre y apellido *" id="name" required data-validation-required-message="Ingrese su nombre y apellido.">
 								<p class="help-block text-danger"></p>
@@ -548,7 +558,7 @@
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
-						<div class="col-md-5">
+						<div class="col-md-6">
 							<div class="form-group">
 								<textarea class="form-control" placeholder="Tu pregunta o requerimiento *" id="message" required data-validation-required-message="Ingrese una pregunta o requerimiento"></textarea>
 								<p class="help-block text-danger"></p>
@@ -557,7 +567,7 @@
 						<div class="clearfix"></div>
 						<div class="col-lg-12 text-center">
 							<div id="success"></div>
-							<button type="submit" class="btn btn-xl">Enviar</button>
+							<button type="submit" class="btn btn-xl" id="btnEnviarMail">Enviar</button>
 						</div>
 					</div>
 				</form>
@@ -570,18 +580,18 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<span class="copyright">Copyright &copy; Tedein ${new java.util.Date().format("yyyy")} </span>
+				<span class="copyright">Copyright &copy; Tedein S.A. ${new java.util.Date().format("yyyy")} </span>
 			</div>
-			<div class="col-md-4">
-				<ul class="list-inline social-buttons">
-					<li><a href="#"><i class="fa fa-twitter"></i></a>
-					</li>
-					<li><a href="#"><i class="fa fa-facebook"></i></a>
-					</li>
-					<li><a href="#"><i class="fa fa-linkedin"></i></a>
-					</li>
-				</ul>
-			</div>
+			%{--<div class="col-md-4">--}%
+				%{--<ul class="list-inline social-buttons">--}%
+					%{--<li><a href="#"><i class="fa fa-twitter"></i></a>--}%
+					%{--</li>--}%
+					%{--<li><a href="#"><i class="fa fa-facebook"></i></a>--}%
+					%{--</li>--}%
+					%{--<li><a href="#"><i class="fa fa-linkedin"></i></a>--}%
+					%{--</li>--}%
+				%{--</ul>--}%
+			%{--</div>--}%
 			<div class="col-md-4">
 				<ul class="list-inline quicklinks">
 					<li><a href="#">Login</a>
@@ -773,6 +783,35 @@
 %{--</div>--}%
 %{--</div>--}%
 %{--</div>--}%
+
+<script type="text/javascript">
+
+	$("#btnEnviarMail").click(function () {
+		var nombre= $("#name").val();
+		var telefono= $("#phone").val();
+		var correo = $("#email").val();
+		var mensaje = $("#message").val();
+		$.ajax({
+			type: 'POST',
+			url: "${createLink(controller: 'principal', action: 'enviarMail_ajax')}",
+			data:{
+				nombre: nombre,
+				telefono: telefono,
+				correo: correo,
+				mensaje: mensaje
+
+			},
+			success: function (msg) {
+				if(msg == 'ok'){
+					alert("Mail enviado correctamente")
+				}
+
+			}
+		})
+	});
+</script>
+
+
 
 <!-- jQuery -->
 %{--<script src="vendor/jquery/jquery.min.js"></script>--}%
