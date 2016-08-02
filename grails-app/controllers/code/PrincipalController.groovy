@@ -16,16 +16,19 @@ class PrincipalController {
 
     def enviarMail_ajax () {
 
-        println("params enviar mail " + params)
+//        println("params enviar mail " + params)
         def mailTedein = "informacion@tedein.com.ec"
-
 
 
         try{
             mailService.sendMail {
                 to mailTedein
                 subject "Nuevo correo desde la página web de TEDEIN"
-                body "Pregunta/información </br> Nombre: ${params.nombre} </br> Teléfono: ${params.telefono} </br> Email: ${params.correo} </br> Mensaje: ${params.mensaje}"
+                body "Pregunta o información: " +
+                        "\n Nombre: ${params.nombre} " +
+                        "\n Teléfono: ${params.telefono} " +
+                        "\n Email: ${params.correo} " +
+                        "\n Mensaje: ${params.mensaje}"
             }
             render "ok"
         }catch (e){
@@ -33,6 +36,14 @@ class PrincipalController {
              println("Error al enviar el mail")
         }
 
+    }
+
+    def dialogos_ajax () {
+
+        println("params " + params)
+
+        def articulo = Articulo.get(params.id)
+        return [art: articulo]
 
     }
 
