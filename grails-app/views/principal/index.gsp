@@ -151,7 +151,7 @@
 
 				<div class="row text-center">
 					<div class="col-md-4 col-sm-6 portfolio-item">
-						<a href="#link_${art?.id}" class="portfolio-link btnArt" data-toggle="modal">
+						<a href="#link_${art?.id}" class="portfolio-link btnArt" data-toggle="modal" at_id="${art.id}">
 							<g:hiddenField name="idArt" class="idC" value="${art?.id}"/>
 							<div class="portfolio-hover">
 								<div class="portfolio-hover-content">
@@ -807,13 +807,14 @@
 
 	$(".btnArt").click(function () {
 //		var idA = $(".btnArt").attr("datos");
+		var id = $(this).attr("at_id");
 		var idA = $(".idC").val();
-		console.log("id " + idA)
+		console.log("id " + idA, "id.....:", id)
 		$.ajax({
 			type:'POST',
 			url:"${createLink(controller: 'principal', action: 'dialogos_ajax')}",
 			data: {
-				id: idA
+				id: id
 			},
 			success: function (msg) {
 				$("#aqui").html(msg);
