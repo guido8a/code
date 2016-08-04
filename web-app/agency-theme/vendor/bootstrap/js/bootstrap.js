@@ -1133,6 +1133,8 @@ if (typeof jQuery === 'undefined') {
         callback()
 
     } else if (!this.isShown && this.$backdrop) {
+
+    //if (!this.isShown && this.$backdrop) {
       this.$backdrop.removeClass('in')
 
       var callbackRemove = function () {
@@ -1145,7 +1147,8 @@ if (typeof jQuery === 'undefined') {
           .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :
         callbackRemove()
 
-    } else if (callback) {
+    }
+    else if (callback) {
       callback()
     }
   }

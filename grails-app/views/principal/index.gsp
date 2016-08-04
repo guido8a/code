@@ -183,6 +183,7 @@
 
 	%{--<div class="cd-scrolling-bg cd-color-2">--}%
 	<section id="${se?.id}" class="bg-light-gray portfolio">
+
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -190,24 +191,25 @@
 					<h3 class="section-subheading text-muted">${se?.subtitulo}</h3>
 				</div>
 			</div>
-			<g:each in="${code.Articulo.findAllBySeccion(se)}" var="art">
-				<div class="row text-center">
-					<div class="col-md-4 col-sm-6 portfolio-item">
-						<a href="#link_${art?.id}" class="portfolio-link btnArt" data-toggle="modal" at_id="${art.id}">
-							<div class="portfolio-hover">
-								<div class="portfolio-hover-content">
-									<i class="fa fa-plus fa-3x"></i>
-								</div>
-							</div>
-							<img src="${resource(dir: 'agency-theme', file: 'img/portfolio/roundicons.png')}" class="img-responsive" alt="" >
-						</a>
-						<div class="portfolio-caption">
-							<h4>${art?.titulo}</h4>
-							<p class="text-muted">${art?.subtitulo}</p>
-						</div>
-					</div>
-				</div>
-			</g:each>
+		<elm:plantilla  seccion="${se?.id}"/>
+			%{--<g:each in="${code.Articulo.findAllBySeccion(se)}" var="art">--}%
+				%{--<div class="row text-center">--}%
+					%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+						%{--<a href="#link_${art?.id}" class="portfolio-link btnArt" data-toggle="modal" at_id="${art.id}">--}%
+							%{--<div class="portfolio-hover">--}%
+								%{--<div class="portfolio-hover-content">--}%
+									%{--<i class="fa fa-plus fa-3x"></i>--}%
+								%{--</div>--}%
+							%{--</div>--}%
+							%{--<img src="${resource(dir: 'agency-theme', file: 'img/portfolio/roundicons.png')}" class="img-responsive" alt="" >--}%
+						%{--</a>--}%
+						%{--<div class="portfolio-caption">--}%
+							%{--<h4>${art?.titulo}</h4>--}%
+							%{--<p class="text-muted">${art?.subtitulo}</p>--}%
+						%{--</div>--}%
+					%{--</div>--}%
+				%{--</div>--}%
+			%{--</g:each>--}%
 		</div>
 	</section>
 	%{--</div>--}%
@@ -253,227 +255,227 @@
 %{--</section>--}%
 
 <!-- Portfolio Grid Section -->
-<section id="portfolio" class="bg-light-gray">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2 class="section-heading">${quanto[0].seccion.titulo}</h2>
+%{--<section id="portfolio" class="bg-light-gray">--}%
+	%{--<div class="container">--}%
+		%{--<div class="row">--}%
+			%{--<div class="col-lg-12 text-center">--}%
+				%{--<h2 class="section-heading">${quanto[0].seccion.titulo}</h2>--}%
 
-				<h3 class="section-subheading text-muted">${quanto[0].seccion.subtitulo}</h3>
-			</div>
-		</div>
+				%{--<h3 class="section-subheading text-muted">${quanto[0].seccion.subtitulo}</h3>--}%
+			%{--</div>--}%
+		%{--</div>--}%
 
-		<div class="row">
+		%{--<div class="row">--}%
 
-			<g:each in="${quanto}" var="qnto">
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#${qnto.seccion?.id}" class="portfolio-link btnArt" data-toggle="modal" at_id="${qnto.id}">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-plus fa-3x"></i>
-						</div>
-					</div>
-					<img src="${resource(dir: 'images', file: qnto.imagen)}" class="img-responsive" alt="${qnto.descripcion}" >
-				</a>
+			%{--<g:each in="${quanto}" var="qnto">--}%
+			%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+				%{--<a href="#${qnto.seccion?.id}" class="portfolio-link btnArt" data-toggle="modal" at_id="${qnto.id}">--}%
+					%{--<div class="portfolio-hover">--}%
+						%{--<div class="portfolio-hover-content">--}%
+							%{--<i class="fa fa-plus fa-3x"></i>--}%
+						%{--</div>--}%
+					%{--</div>--}%
+					%{--<img src="${resource(dir: 'images', file: qnto.imagen)}" class="img-responsive" alt="${qnto.descripcion}" >--}%
+				%{--</a>--}%
 
-				<div class="portfolio-caption">
-					<h4>${qnto.titulo}</h4>
+				%{--<div class="portfolio-caption">--}%
+					%{--<h4>${qnto.titulo}</h4>--}%
 
-					<p class="text-muted">${qnto.subtitulo}</p>
-				</div>
-			</div>
-			</g:each>
+					%{--<p class="text-muted">${qnto.subtitulo}</p>--}%
+				%{--</div>--}%
+			%{--</div>--}%
+			%{--</g:each>--}%
 
 
-			%{--
-                        <div class="col-md-4 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
-                                <img src="${resource(dir: 'agency-theme', file: 'img/portfolio/roundicons.png')}"
-                                     class="img-responsive" alt="">
-                            </a>
 
-                            <div class="portfolio-caption">
-                                <h4>Round Icons</h4>
+                        %{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+                            %{--<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">--}%
+                                %{--<div class="portfolio-hover">--}%
+                                    %{--<div class="portfolio-hover-content">--}%
+                                        %{--<i class="fa fa-plus fa-3x"></i>--}%
+                                    %{--</div>--}%
+                                %{--</div>--}%
+                                %{--<img src="img/portfolio/roundicons.png" class="img-responsive" alt="">--}%
+                                %{--<img src="${resource(dir: 'agency-theme', file: 'img/portfolio/roundicons.png')}"--}%
+                                     %{--class="img-responsive" alt="">--}%
+                            %{--</a>--}%
 
-                                <p class="text-muted">Graphic Design</p>
-                            </div>
-                        </div>
+                            %{--<div class="portfolio-caption">--}%
+                                %{--<h4>Round Icons</h4>--}%
 
-                        <div class="col-md-4 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
-                            </a>
+                                %{--<p class="text-muted">Graphic Design</p>--}%
+                            %{--</div>--}%
+                        %{--</div>--}%
 
-                            <div class="portfolio-caption">
-                                <h4>Startup Framework</h4>
+                        %{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+                            %{--<a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">--}%
+                                %{--<div class="portfolio-hover">--}%
+                                    %{--<div class="portfolio-hover-content">--}%
+                                        %{--<i class="fa fa-plus fa-3x"></i>--}%
+                                    %{--</div>--}%
+                                %{--</div>--}%
+                                %{--<img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">--}%
+                            %{--</a>--}%
 
-                                <p class="text-muted">Website Design</p>
-                            </div>
-                        </div>
+                            %{--<div class="portfolio-caption">--}%
+                                %{--<h4>Startup Framework</h4>--}%
 
-                        <div class="col-md-4 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
-                            </a>
+                                %{--<p class="text-muted">Website Design</p>--}%
+                            %{--</div>--}%
+                        %{--</div>--}%
 
-                            <div class="portfolio-caption">
-                                <h4>Treehouse</h4>
+                        %{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+                            %{--<a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">--}%
+                                %{--<div class="portfolio-hover">--}%
+                                    %{--<div class="portfolio-hover-content">--}%
+                                        %{--<i class="fa fa-plus fa-3x"></i>--}%
+                                    %{--</div>--}%
+                                %{--</div>--}%
+                                %{--<img src="img/portfolio/treehouse.png" class="img-responsive" alt="">--}%
+                            %{--</a>--}%
 
-                                <p class="text-muted">Website Design</p>
-                            </div>
-                        </div>
+                            %{--<div class="portfolio-caption">--}%
+                                %{--<h4>Treehouse</h4>--}%
 
-                        <div class="col-md-4 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/golden.png" class="img-responsive" alt="">
-                            </a>
+                                %{--<p class="text-muted">Website Design</p>--}%
+                            %{--</div>--}%
+                        %{--</div>--}%
 
-                            <div class="portfolio-caption">
-                                <h4>Golden</h4>
+                        %{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+                            %{--<a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">--}%
+                                %{--<div class="portfolio-hover">--}%
+                                    %{--<div class="portfolio-hover-content">--}%
+                                        %{--<i class="fa fa-plus fa-3x"></i>--}%
+                                    %{--</div>--}%
+                                %{--</div>--}%
+                                %{--<img src="img/portfolio/golden.png" class="img-responsive" alt="">--}%
+                            %{--</a>--}%
 
-                                <p class="text-muted">Website Design</p>
-                            </div>
-                        </div>
+                            %{--<div class="portfolio-caption">--}%
+                                %{--<h4>Golden</h4>--}%
 
-                        <div class="col-md-4 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/escape.png" class="img-responsive" alt="">
-                            </a>
+                                %{--<p class="text-muted">Website Design</p>--}%
+                            %{--</div>--}%
+                        %{--</div>--}%
 
-                            <div class="portfolio-caption">
-                                <h4>Escape</h4>
+                        %{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+                            %{--<a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">--}%
+                                %{--<div class="portfolio-hover">--}%
+                                    %{--<div class="portfolio-hover-content">--}%
+                                        %{--<i class="fa fa-plus fa-3x"></i>--}%
+                                    %{--</div>--}%
+                                %{--</div>--}%
+                                %{--<img src="img/portfolio/escape.png" class="img-responsive" alt="">--}%
+                            %{--</a>--}%
 
-                                <p class="text-muted">Website Design</p>
-                            </div>
-                        </div>
+                            %{--<div class="portfolio-caption">--}%
+                                %{--<h4>Escape</h4>--}%
 
-                        <div class="col-md-4 col-sm-6 portfolio-item">
-                            <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
-                            </a>
+                                %{--<p class="text-muted">Website Design</p>--}%
+                            %{--</div>--}%
+                        %{--</div>--}%
 
-                            <div class="portfolio-caption">
-                                <h4>Dreams</h4>
+                        %{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+                            %{--<a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">--}%
+                                %{--<div class="portfolio-hover">--}%
+                                    %{--<div class="portfolio-hover-content">--}%
+                                        %{--<i class="fa fa-plus fa-3x"></i>--}%
+                                    %{--</div>--}%
+                                %{--</div>--}%
+                                %{--<img src="img/portfolio/dreams.png" class="img-responsive" alt="">--}%
+                            %{--</a>--}%
 
-                                <p class="text-muted">Website Design</p>
-                            </div>
-                        </div>
-            --}%
-		</div>
-	</div>
-</section>
+                            %{--<div class="portfolio-caption">--}%
+                                %{--<h4>Dreams</h4>--}%
+
+                                %{--<p class="text-muted">Website Design</p>--}%
+                            %{--</div>--}%
+                        %{--</div>--}%
+
+		%{--</div>--}%
+	%{--</div>--}%
+%{--</section>--}%
 
 <!-- About Section -->
-<section id="about">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2 class="section-heading">About</h2>
-				<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12">
-				<ul class="timeline">
-					<li>
-						<div class="timeline-image">
-							<img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<h4>2009-2011</h4>
-								<h4 class="subheading">Our Humble Beginnings</h4>
-							</div>
-							<div class="timeline-body">
-								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-							</div>
-						</div>
-					</li>
-					<li class="timeline-inverted">
-						<div class="timeline-image">
-							<img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<h4>March 2011</h4>
-								<h4 class="subheading">An Agency is Born</h4>
-							</div>
-							<div class="timeline-body">
-								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="timeline-image">
-							<img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<h4>December 2012</h4>
-								<h4 class="subheading">Transition to Full Service</h4>
-							</div>
-							<div class="timeline-body">
-								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-							</div>
-						</div>
-					</li>
-					<li class="timeline-inverted">
-						<div class="timeline-image">
-							<img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<h4>July 2014</h4>
-								<h4 class="subheading">Phase Two Expansion</h4>
-							</div>
-							<div class="timeline-body">
-								<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-							</div>
-						</div>
-					</li>
-					<li class="timeline-inverted">
-						<div class="timeline-image">
-							<h4>Be Part
-								<br>Of Our
-								<br>Story!</h4>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</section>
+%{--<section id="about">--}%
+	%{--<div class="container">--}%
+		%{--<div class="row">--}%
+			%{--<div class="col-lg-12 text-center">--}%
+				%{--<h2 class="section-heading">About</h2>--}%
+				%{--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>--}%
+			%{--</div>--}%
+		%{--</div>--}%
+		%{--<div class="row">--}%
+			%{--<div class="col-lg-12">--}%
+				%{--<ul class="timeline">--}%
+					%{--<li>--}%
+						%{--<div class="timeline-image">--}%
+							%{--<img class="img-circle img-responsive" src="img/about/1.jpg" alt="">--}%
+						%{--</div>--}%
+						%{--<div class="timeline-panel">--}%
+							%{--<div class="timeline-heading">--}%
+								%{--<h4>2009-2011</h4>--}%
+								%{--<h4 class="subheading">Our Humble Beginnings</h4>--}%
+							%{--</div>--}%
+							%{--<div class="timeline-body">--}%
+								%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>--}%
+							%{--</div>--}%
+						%{--</div>--}%
+					%{--</li>--}%
+					%{--<li class="timeline-inverted">--}%
+						%{--<div class="timeline-image">--}%
+							%{--<img class="img-circle img-responsive" src="img/about/2.jpg" alt="">--}%
+						%{--</div>--}%
+						%{--<div class="timeline-panel">--}%
+							%{--<div class="timeline-heading">--}%
+								%{--<h4>March 2011</h4>--}%
+								%{--<h4 class="subheading">An Agency is Born</h4>--}%
+							%{--</div>--}%
+							%{--<div class="timeline-body">--}%
+								%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>--}%
+							%{--</div>--}%
+						%{--</div>--}%
+					%{--</li>--}%
+					%{--<li>--}%
+						%{--<div class="timeline-image">--}%
+							%{--<img class="img-circle img-responsive" src="img/about/3.jpg" alt="">--}%
+						%{--</div>--}%
+						%{--<div class="timeline-panel">--}%
+							%{--<div class="timeline-heading">--}%
+								%{--<h4>December 2012</h4>--}%
+								%{--<h4 class="subheading">Transition to Full Service</h4>--}%
+							%{--</div>--}%
+							%{--<div class="timeline-body">--}%
+								%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>--}%
+							%{--</div>--}%
+						%{--</div>--}%
+					%{--</li>--}%
+					%{--<li class="timeline-inverted">--}%
+						%{--<div class="timeline-image">--}%
+							%{--<img class="img-circle img-responsive" src="img/about/4.jpg" alt="">--}%
+						%{--</div>--}%
+						%{--<div class="timeline-panel">--}%
+							%{--<div class="timeline-heading">--}%
+								%{--<h4>July 2014</h4>--}%
+								%{--<h4 class="subheading">Phase Two Expansion</h4>--}%
+							%{--</div>--}%
+							%{--<div class="timeline-body">--}%
+								%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>--}%
+							%{--</div>--}%
+						%{--</div>--}%
+					%{--</li>--}%
+					%{--<li class="timeline-inverted">--}%
+						%{--<div class="timeline-image">--}%
+							%{--<h4>Be Part--}%
+								%{--<br>Of Our--}%
+								%{--<br>Story!</h4>--}%
+						%{--</div>--}%
+					%{--</li>--}%
+				%{--</ul>--}%
+			%{--</div>--}%
+		%{--</div>--}%
+	%{--</div>--}%
+%{--</section>--}%
 
 <!-- Team Section -->
 %{--<section id="team" class="bg-light-gray">--}%
@@ -910,7 +912,8 @@
 
 <!-- Bootstrap Core JavaScript -->
 %{--<script src="vendor/bootstrap/js/bootstrap.min.js"></script>--}%
-<script src="${resource(dir: 'agency-theme/vendor/bootstrap', file: 'js/bootstrap.min.js')}"></script>
+%{--<script src="${resource(dir: 'agency-theme/vendor/bootstrap', file: 'js/bootstrap.min.js')}"></script>--}%
+<script src="${resource(dir: 'agency-theme/vendor/bootstrap', file: 'js/bootstrap.js')}"></script>
 
 <!-- Plugin JavaScript -->
 %{--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>--}%

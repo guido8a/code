@@ -6,7 +6,11 @@
 --%>
 
 %{--<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">--}%
-<div class="portfolio-modal modal fade in dialogo" aria-hidden="true" role="dialog" tabindex="-1" style="display: block; padding-right: 14px; overflow-y: auto" id="modalArticulo">
+<div class="portfolio-modal modal fade in dialogo" aria-hidden="true" role="dialog" tabindex="-1" style="display: block; padding-right: 14px; overflow-y: auto" id="${art?.id}">
+%{--<div class="portfolio-modal modal fade in dialogo" id="${art?.id}" tabindex="-1" role="dialog" aria-hidden="true">--}%
+
+
+
     <div class="modal-dialog" >
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal" id="cerrarModal">
@@ -42,14 +46,17 @@
 
 <script>
 
-    $("#cerrarModal").click(function () {
-//        $("#modalArticulo").remove();
-//        $("#modalArticulo").modal('toggle');
-        $("#modalArticulo").fadeOut();
-    });
-
-    $("#btnCerrar").click(function () {
-        $("#modalArticulo").fadeOut();
-    })
+//    $("#cerrarModal").click(function () {
+////        $("#modalArticulo").remove();
+////        $("#modalArticulo").modal('toggle');
+//        $("#modalArticulo").fadeOut();
+//    });
+//
+//    $("#btnCerrar").click(function () {
+//        $("#modalArticulo").fadeOut();
+//    })
 
 </script>
+
+
+
