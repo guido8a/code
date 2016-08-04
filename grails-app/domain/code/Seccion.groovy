@@ -2,6 +2,7 @@ package code
 
 class Seccion {
     Sitio sitio
+    Layout layout
     String menu
     String titulo
     String subtitulo
@@ -18,6 +19,7 @@ class Seccion {
         columns {
             id column: 'sccn__id'
             sitio column: 'site__id'
+            layout column: 'layt__id'
             menu column: 'sccnmenu'
             titulo column: 'sccntitl'
             subtitulo column: 'sccnsbtt'

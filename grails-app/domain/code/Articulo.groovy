@@ -2,7 +2,6 @@ package code
 
 class Articulo {
     Seccion seccion
-    Layout layout
     String titulo
     String subtitulo
     String descripcion
@@ -21,7 +20,7 @@ class Articulo {
         columns {
             id              column: 'artc__id'
             seccion         column: 'sccn__id'
-            layout          column: 'layt__id'
+
             titulo          column: 'artctitl'
             subtitulo       column: 'artcsbtt'
             descripcion     column: 'artcdscr'

@@ -10,7 +10,9 @@ class PrincipalController {
 
         println("secciones " + secciones)
 
-        return [sitio: sitio, secciones: secciones]
+        def quanto = Articulo.findAllBySeccion(Seccion.get(3))
+
+        return [sitio: sitio, secciones: secciones, quanto: quanto]
 
     }
 
