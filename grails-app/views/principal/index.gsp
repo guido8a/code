@@ -78,7 +78,7 @@
 
 
 	body, html, main {
-		 /*important */
+		/*important */
 		height: 100% !important;
 	}
 
@@ -100,7 +100,7 @@
 		background-image: url("../agency-theme/img/portada3.jpeg");
 	}
 	/*.cd-fixed-bg.cd-bg-4 {*/
-		/*background-image: url("../img/cd-background-4.jpg");*/
+	/*background-image: url("../img/cd-background-4.jpg");*/
 	/*}*/
 
 	.cd-scrolling-bg {
@@ -131,26 +131,11 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-			%{--<li class="hidden">--}%
-			%{--<a href="#page-top"></a>--}%
-			%{--</li>--}%
 				<g:each in="${secciones}" var="sec">
 					<li>
 						<a class="page-scroll" href="#${sec?.id}">${sec?.menu}</a>
 					</li>
 				</g:each>
-			%{--<li>--}%
-			%{--<a class="page-scroll" href="#services">Services</a>--}%
-			%{--</li>--}%
-			%{--<li>--}%
-			%{--<a class="page-scroll" href="#portfolio">Portfolio</a>--}%
-			%{--</li>--}%
-			%{--<li>--}%
-			%{--<a class="page-scroll" href="#about">About</a>--}%
-			%{--</li>--}%
-			%{--<li>--}%
-			%{--<a class="page-scroll" href="#team">Team</a>--}%
-			%{--</li>--}%
 				<li>
 					<a class="page-scroll" href="#contact">Contacto</a>
 				</li>
@@ -175,15 +160,7 @@
 
 <g:each in="${secciones}" var="se" status="j">
 
-	%{--<div class="cd-fixed-bg cd-bg-1">--}%
-		%{--<h1><!-- title goes here --></h1>--}%
-	%{--</div>--}%
-
-
-
-	%{--<div class="cd-scrolling-bg cd-color-2">--}%
 	<section id="${se?.id}" class="bg-light-gray portfolio">
-
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -191,290 +168,293 @@
 					<h3 class="section-subheading text-muted">${se?.subtitulo}</h3>
 				</div>
 			</div>
-		<elm:plantilla  seccion="${se?.id}"/>
-			%{--<g:each in="${code.Articulo.findAllBySeccion(se)}" var="art">--}%
-				%{--<div class="row text-center">--}%
-					%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
-						%{--<a href="#link_${art?.id}" class="portfolio-link btnArt" data-toggle="modal" at_id="${art.id}">--}%
-							%{--<div class="portfolio-hover">--}%
-								%{--<div class="portfolio-hover-content">--}%
-									%{--<i class="fa fa-plus fa-3x"></i>--}%
-								%{--</div>--}%
-							%{--</div>--}%
-							%{--<img src="${resource(dir: 'agency-theme', file: 'img/portfolio/roundicons.png')}" class="img-responsive" alt="" >--}%
-						%{--</a>--}%
-						%{--<div class="portfolio-caption">--}%
-							%{--<h4>${art?.titulo}</h4>--}%
-							%{--<p class="text-muted">${art?.subtitulo}</p>--}%
-						%{--</div>--}%
-					%{--</div>--}%
-				%{--</div>--}%
-			%{--</g:each>--}%
+			<elm:plantilla  seccion="${se?.id}"/>
+
 		</div>
 	</section>
-	%{--</div>--}%
 </g:each>
 
 
+
+
+%{--<div class="row">--}%
+	%{--<div class="col-lg-12">--}%
+
+			%{--<div class="row">--}%
+				%{--<div class="col-md-3">--}%
+					%{--<img src='${resource(dir: 'images', file: 'manos.png')}' style='height: 150px'>--}%
+				%{--</div>--}%
+				%{--<div class="col-md-9">--}%
+					%{--<div class="form-group">--}%
+						%{--<textarea class="form-control" placeholder="Tu pregunta o requerimiento *" id="message" required data-validation-required-message="Ingrese una pregunta o requerimiento"></textarea>--}%
+					%{--<p class=""> Tedein S.A. es una empresa comprometida con el buen uso y la utilización adecuada de la tecnología para la solución de problemas de las empresas.--}%
+					%{--Usualmente la tecnología llega a ser el mal necesario que las empresas deben sufrir. Tedein, busca hacer de la tecnología el principal aliado en el éxito empresarial.--}%
+					%{--Su ámbito de acción es el desarrollo de grandes sistemas de información, los mismos que permiten aplicar los beneficios de la tecnología al quehacer cotidiano de la empresa. En este campo hemos desarrollado sistemas financieros, de control de producción, de construcción y presupuesto de obras civiles, de evaluación, etc.</p>--}%
+					%{--</div>--}%
+				%{--</div>--}%
+			%{--</div>--}%
+	%{--</div>--}%
+%{--</div>--}%
+
 <!-- Services Section -->
 %{--<section id="services">--}%
-%{--<div class="container">--}%
-%{--<div class="row">--}%
-%{--<div class="col-lg-12 text-center">--}%
-%{--<h2 class="section-heading">Services</h2>--}%
-%{--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>--}%
-%{--</div>--}%
-%{--</div>--}%
-%{--<div class="row text-center">--}%
-%{--<div class="col-md-4">--}%
-%{--<span class="fa-stack fa-4x">--}%
-%{--<i class="fa fa-circle fa-stack-2x text-primary"></i>--}%
-%{--<i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>--}%
-%{--</span>--}%
-%{--<h4 class="service-heading">E-Commerce</h4>--}%
-%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>--}%
-%{--</div>--}%
-%{--<div class="col-md-4">--}%
-%{--<span class="fa-stack fa-4x">--}%
-%{--<i class="fa fa-circle fa-stack-2x text-primary"></i>--}%
-%{--<i class="fa fa-laptop fa-stack-1x fa-inverse"></i>--}%
-%{--</span>--}%
-%{--<h4 class="service-heading">Responsive Design</h4>--}%
-%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>--}%
-%{--</div>--}%
-%{--<div class="col-md-4">--}%
-%{--<span class="fa-stack fa-4x">--}%
-%{--<i class="fa fa-circle fa-stack-2x text-primary"></i>--}%
-%{--<i class="fa fa-lock fa-stack-1x fa-inverse"></i>--}%
-%{--</span>--}%
-%{--<h4 class="service-heading">Web Security</h4>--}%
-%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>--}%
-%{--</div>--}%
-%{--</div>--}%
-%{--</div>--}%
+	%{--<div class="container">--}%
+		%{--<div class="row">--}%
+			%{--<div class="col-lg-12 text-center">--}%
+				%{--<h2 class="section-heading">Services</h2>--}%
+				%{--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>--}%
+			%{--</div>--}%
+		%{--</div>--}%
+		%{--<div class="row text-center">--}%
+			%{--<div class="col-md-4">--}%
+				%{--<span class="fa-stack fa-4x">--}%
+					%{--<i class="fa fa-circle fa-stack-2x text-primary"></i>--}%
+					%{--<i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>--}%
+				%{--</span>--}%
+				%{--<h4 class="service-heading">E-Commerce</h4>--}%
+				%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>--}%
+			%{--</div>--}%
+			%{--<div class="col-md-4">--}%
+				%{--<span class="fa-stack fa-4x">--}%
+					%{--<i class="fa fa-circle fa-stack-2x text-primary"></i>--}%
+					%{--<i class="fa fa-laptop fa-stack-1x fa-inverse"></i>--}%
+				%{--</span>--}%
+				%{--<h4 class="service-heading">Responsive Design</h4>--}%
+				%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>--}%
+			%{--</div>--}%
+			%{--<div class="col-md-4">--}%
+				%{--<span class="fa-stack fa-4x">--}%
+					%{--<i class="fa fa-circle fa-stack-2x text-primary"></i>--}%
+					%{--<i class="fa fa-lock fa-stack-1x fa-inverse"></i>--}%
+				%{--</span>--}%
+				%{--<h4 class="service-heading">Web Security</h4>--}%
+				%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>--}%
+			%{--</div>--}%
+		%{--</div>--}%
+	%{--</div>--}%
 %{--</section>--}%
 
 <!-- Portfolio Grid Section -->
 %{--<section id="portfolio" class="bg-light-gray">--}%
-	%{--<div class="container">--}%
-		%{--<div class="row">--}%
-			%{--<div class="col-lg-12 text-center">--}%
-				%{--<h2 class="section-heading">${quanto[0].seccion.titulo}</h2>--}%
+%{--<div class="container">--}%
+%{--<div class="row">--}%
+%{--<div class="col-lg-12 text-center">--}%
+%{--<h2 class="section-heading">${quanto[0].seccion.titulo}</h2>--}%
 
-				%{--<h3 class="section-subheading text-muted">${quanto[0].seccion.subtitulo}</h3>--}%
-			%{--</div>--}%
-		%{--</div>--}%
+%{--<h3 class="section-subheading text-muted">${quanto[0].seccion.subtitulo}</h3>--}%
+%{--</div>--}%
+%{--</div>--}%
 
-		%{--<div class="row">--}%
+%{--<div class="row">--}%
 
-			%{--<g:each in="${quanto}" var="qnto">--}%
-			%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
-				%{--<a href="#${qnto.seccion?.id}" class="portfolio-link btnArt" data-toggle="modal" at_id="${qnto.id}">--}%
-					%{--<div class="portfolio-hover">--}%
-						%{--<div class="portfolio-hover-content">--}%
-							%{--<i class="fa fa-plus fa-3x"></i>--}%
-						%{--</div>--}%
-					%{--</div>--}%
-					%{--<img src="${resource(dir: 'images', file: qnto.imagen)}" class="img-responsive" alt="${qnto.descripcion}" >--}%
-				%{--</a>--}%
+%{--<g:each in="${quanto}" var="qnto">--}%
+%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+%{--<a href="#${qnto.seccion?.id}" class="portfolio-link btnArt" data-toggle="modal" at_id="${qnto.id}">--}%
+%{--<div class="portfolio-hover">--}%
+%{--<div class="portfolio-hover-content">--}%
+%{--<i class="fa fa-plus fa-3x"></i>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--<img src="${resource(dir: 'images', file: qnto.imagen)}" class="img-responsive" alt="${qnto.descripcion}" >--}%
+%{--</a>--}%
 
-				%{--<div class="portfolio-caption">--}%
-					%{--<h4>${qnto.titulo}</h4>--}%
+%{--<div class="portfolio-caption">--}%
+%{--<h4>${qnto.titulo}</h4>--}%
 
-					%{--<p class="text-muted">${qnto.subtitulo}</p>--}%
-				%{--</div>--}%
-			%{--</div>--}%
-			%{--</g:each>--}%
+%{--<p class="text-muted">${qnto.subtitulo}</p>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--</g:each>--}%
 
 
 
-                        %{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
-                            %{--<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">--}%
-                                %{--<div class="portfolio-hover">--}%
-                                    %{--<div class="portfolio-hover-content">--}%
-                                        %{--<i class="fa fa-plus fa-3x"></i>--}%
-                                    %{--</div>--}%
-                                %{--</div>--}%
-                                %{--<img src="img/portfolio/roundicons.png" class="img-responsive" alt="">--}%
-                                %{--<img src="${resource(dir: 'agency-theme', file: 'img/portfolio/roundicons.png')}"--}%
-                                     %{--class="img-responsive" alt="">--}%
-                            %{--</a>--}%
+%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+%{--<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">--}%
+%{--<div class="portfolio-hover">--}%
+%{--<div class="portfolio-hover-content">--}%
+%{--<i class="fa fa-plus fa-3x"></i>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--<img src="img/portfolio/roundicons.png" class="img-responsive" alt="">--}%
+%{--<img src="${resource(dir: 'agency-theme', file: 'img/portfolio/roundicons.png')}"--}%
+%{--class="img-responsive" alt="">--}%
+%{--</a>--}%
 
-                            %{--<div class="portfolio-caption">--}%
-                                %{--<h4>Round Icons</h4>--}%
+%{--<div class="portfolio-caption">--}%
+%{--<h4>Round Icons</h4>--}%
 
-                                %{--<p class="text-muted">Graphic Design</p>--}%
-                            %{--</div>--}%
-                        %{--</div>--}%
+%{--<p class="text-muted">Graphic Design</p>--}%
+%{--</div>--}%
+%{--</div>--}%
 
-                        %{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
-                            %{--<a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">--}%
-                                %{--<div class="portfolio-hover">--}%
-                                    %{--<div class="portfolio-hover-content">--}%
-                                        %{--<i class="fa fa-plus fa-3x"></i>--}%
-                                    %{--</div>--}%
-                                %{--</div>--}%
-                                %{--<img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">--}%
-                            %{--</a>--}%
+%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+%{--<a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">--}%
+%{--<div class="portfolio-hover">--}%
+%{--<div class="portfolio-hover-content">--}%
+%{--<i class="fa fa-plus fa-3x"></i>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--<img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">--}%
+%{--</a>--}%
 
-                            %{--<div class="portfolio-caption">--}%
-                                %{--<h4>Startup Framework</h4>--}%
+%{--<div class="portfolio-caption">--}%
+%{--<h4>Startup Framework</h4>--}%
 
-                                %{--<p class="text-muted">Website Design</p>--}%
-                            %{--</div>--}%
-                        %{--</div>--}%
+%{--<p class="text-muted">Website Design</p>--}%
+%{--</div>--}%
+%{--</div>--}%
 
-                        %{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
-                            %{--<a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">--}%
-                                %{--<div class="portfolio-hover">--}%
-                                    %{--<div class="portfolio-hover-content">--}%
-                                        %{--<i class="fa fa-plus fa-3x"></i>--}%
-                                    %{--</div>--}%
-                                %{--</div>--}%
-                                %{--<img src="img/portfolio/treehouse.png" class="img-responsive" alt="">--}%
-                            %{--</a>--}%
+%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+%{--<a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">--}%
+%{--<div class="portfolio-hover">--}%
+%{--<div class="portfolio-hover-content">--}%
+%{--<i class="fa fa-plus fa-3x"></i>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--<img src="img/portfolio/treehouse.png" class="img-responsive" alt="">--}%
+%{--</a>--}%
 
-                            %{--<div class="portfolio-caption">--}%
-                                %{--<h4>Treehouse</h4>--}%
+%{--<div class="portfolio-caption">--}%
+%{--<h4>Treehouse</h4>--}%
 
-                                %{--<p class="text-muted">Website Design</p>--}%
-                            %{--</div>--}%
-                        %{--</div>--}%
+%{--<p class="text-muted">Website Design</p>--}%
+%{--</div>--}%
+%{--</div>--}%
 
-                        %{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
-                            %{--<a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">--}%
-                                %{--<div class="portfolio-hover">--}%
-                                    %{--<div class="portfolio-hover-content">--}%
-                                        %{--<i class="fa fa-plus fa-3x"></i>--}%
-                                    %{--</div>--}%
-                                %{--</div>--}%
-                                %{--<img src="img/portfolio/golden.png" class="img-responsive" alt="">--}%
-                            %{--</a>--}%
+%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+%{--<a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">--}%
+%{--<div class="portfolio-hover">--}%
+%{--<div class="portfolio-hover-content">--}%
+%{--<i class="fa fa-plus fa-3x"></i>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--<img src="img/portfolio/golden.png" class="img-responsive" alt="">--}%
+%{--</a>--}%
 
-                            %{--<div class="portfolio-caption">--}%
-                                %{--<h4>Golden</h4>--}%
+%{--<div class="portfolio-caption">--}%
+%{--<h4>Golden</h4>--}%
 
-                                %{--<p class="text-muted">Website Design</p>--}%
-                            %{--</div>--}%
-                        %{--</div>--}%
+%{--<p class="text-muted">Website Design</p>--}%
+%{--</div>--}%
+%{--</div>--}%
 
-                        %{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
-                            %{--<a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">--}%
-                                %{--<div class="portfolio-hover">--}%
-                                    %{--<div class="portfolio-hover-content">--}%
-                                        %{--<i class="fa fa-plus fa-3x"></i>--}%
-                                    %{--</div>--}%
-                                %{--</div>--}%
-                                %{--<img src="img/portfolio/escape.png" class="img-responsive" alt="">--}%
-                            %{--</a>--}%
+%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+%{--<a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">--}%
+%{--<div class="portfolio-hover">--}%
+%{--<div class="portfolio-hover-content">--}%
+%{--<i class="fa fa-plus fa-3x"></i>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--<img src="img/portfolio/escape.png" class="img-responsive" alt="">--}%
+%{--</a>--}%
 
-                            %{--<div class="portfolio-caption">--}%
-                                %{--<h4>Escape</h4>--}%
+%{--<div class="portfolio-caption">--}%
+%{--<h4>Escape</h4>--}%
 
-                                %{--<p class="text-muted">Website Design</p>--}%
-                            %{--</div>--}%
-                        %{--</div>--}%
+%{--<p class="text-muted">Website Design</p>--}%
+%{--</div>--}%
+%{--</div>--}%
 
-                        %{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
-                            %{--<a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">--}%
-                                %{--<div class="portfolio-hover">--}%
-                                    %{--<div class="portfolio-hover-content">--}%
-                                        %{--<i class="fa fa-plus fa-3x"></i>--}%
-                                    %{--</div>--}%
-                                %{--</div>--}%
-                                %{--<img src="img/portfolio/dreams.png" class="img-responsive" alt="">--}%
-                            %{--</a>--}%
+%{--<div class="col-md-4 col-sm-6 portfolio-item">--}%
+%{--<a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">--}%
+%{--<div class="portfolio-hover">--}%
+%{--<div class="portfolio-hover-content">--}%
+%{--<i class="fa fa-plus fa-3x"></i>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--<img src="img/portfolio/dreams.png" class="img-responsive" alt="">--}%
+%{--</a>--}%
 
-                            %{--<div class="portfolio-caption">--}%
-                                %{--<h4>Dreams</h4>--}%
+%{--<div class="portfolio-caption">--}%
+%{--<h4>Dreams</h4>--}%
 
-                                %{--<p class="text-muted">Website Design</p>--}%
-                            %{--</div>--}%
-                        %{--</div>--}%
+%{--<p class="text-muted">Website Design</p>--}%
+%{--</div>--}%
+%{--</div>--}%
 
-		%{--</div>--}%
-	%{--</div>--}%
+%{--</div>--}%
+%{--</div>--}%
 %{--</section>--}%
 
 <!-- About Section -->
 %{--<section id="about">--}%
-	%{--<div class="container">--}%
-		%{--<div class="row">--}%
-			%{--<div class="col-lg-12 text-center">--}%
-				%{--<h2 class="section-heading">About</h2>--}%
-				%{--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>--}%
-			%{--</div>--}%
-		%{--</div>--}%
-		%{--<div class="row">--}%
-			%{--<div class="col-lg-12">--}%
-				%{--<ul class="timeline">--}%
-					%{--<li>--}%
-						%{--<div class="timeline-image">--}%
-							%{--<img class="img-circle img-responsive" src="img/about/1.jpg" alt="">--}%
-						%{--</div>--}%
-						%{--<div class="timeline-panel">--}%
-							%{--<div class="timeline-heading">--}%
-								%{--<h4>2009-2011</h4>--}%
-								%{--<h4 class="subheading">Our Humble Beginnings</h4>--}%
-							%{--</div>--}%
-							%{--<div class="timeline-body">--}%
-								%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>--}%
-							%{--</div>--}%
-						%{--</div>--}%
-					%{--</li>--}%
-					%{--<li class="timeline-inverted">--}%
-						%{--<div class="timeline-image">--}%
-							%{--<img class="img-circle img-responsive" src="img/about/2.jpg" alt="">--}%
-						%{--</div>--}%
-						%{--<div class="timeline-panel">--}%
-							%{--<div class="timeline-heading">--}%
-								%{--<h4>March 2011</h4>--}%
-								%{--<h4 class="subheading">An Agency is Born</h4>--}%
-							%{--</div>--}%
-							%{--<div class="timeline-body">--}%
-								%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>--}%
-							%{--</div>--}%
-						%{--</div>--}%
-					%{--</li>--}%
-					%{--<li>--}%
-						%{--<div class="timeline-image">--}%
-							%{--<img class="img-circle img-responsive" src="img/about/3.jpg" alt="">--}%
-						%{--</div>--}%
-						%{--<div class="timeline-panel">--}%
-							%{--<div class="timeline-heading">--}%
-								%{--<h4>December 2012</h4>--}%
-								%{--<h4 class="subheading">Transition to Full Service</h4>--}%
-							%{--</div>--}%
-							%{--<div class="timeline-body">--}%
-								%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>--}%
-							%{--</div>--}%
-						%{--</div>--}%
-					%{--</li>--}%
-					%{--<li class="timeline-inverted">--}%
-						%{--<div class="timeline-image">--}%
-							%{--<img class="img-circle img-responsive" src="img/about/4.jpg" alt="">--}%
-						%{--</div>--}%
-						%{--<div class="timeline-panel">--}%
-							%{--<div class="timeline-heading">--}%
-								%{--<h4>July 2014</h4>--}%
-								%{--<h4 class="subheading">Phase Two Expansion</h4>--}%
-							%{--</div>--}%
-							%{--<div class="timeline-body">--}%
-								%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>--}%
-							%{--</div>--}%
-						%{--</div>--}%
-					%{--</li>--}%
-					%{--<li class="timeline-inverted">--}%
-						%{--<div class="timeline-image">--}%
-							%{--<h4>Be Part--}%
-								%{--<br>Of Our--}%
-								%{--<br>Story!</h4>--}%
-						%{--</div>--}%
-					%{--</li>--}%
-				%{--</ul>--}%
-			%{--</div>--}%
-		%{--</div>--}%
-	%{--</div>--}%
+%{--<div class="container">--}%
+%{--<div class="row">--}%
+%{--<div class="col-lg-12 text-center">--}%
+%{--<h2 class="section-heading">About</h2>--}%
+%{--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--<div class="row">--}%
+%{--<div class="col-lg-12">--}%
+%{--<ul class="timeline">--}%
+%{--<li>--}%
+%{--<div class="timeline-image">--}%
+%{--<img class="img-circle img-responsive" src="img/about/1.jpg" alt="">--}%
+%{--</div>--}%
+%{--<div class="timeline-panel">--}%
+%{--<div class="timeline-heading">--}%
+%{--<h4>2009-2011</h4>--}%
+%{--<h4 class="subheading">Our Humble Beginnings</h4>--}%
+%{--</div>--}%
+%{--<div class="timeline-body">--}%
+%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--</li>--}%
+%{--<li class="timeline-inverted">--}%
+%{--<div class="timeline-image">--}%
+%{--<img class="img-circle img-responsive" src="img/about/2.jpg" alt="">--}%
+%{--</div>--}%
+%{--<div class="timeline-panel">--}%
+%{--<div class="timeline-heading">--}%
+%{--<h4>March 2011</h4>--}%
+%{--<h4 class="subheading">An Agency is Born</h4>--}%
+%{--</div>--}%
+%{--<div class="timeline-body">--}%
+%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--</li>--}%
+%{--<li>--}%
+%{--<div class="timeline-image">--}%
+%{--<img class="img-circle img-responsive" src="img/about/3.jpg" alt="">--}%
+%{--</div>--}%
+%{--<div class="timeline-panel">--}%
+%{--<div class="timeline-heading">--}%
+%{--<h4>December 2012</h4>--}%
+%{--<h4 class="subheading">Transition to Full Service</h4>--}%
+%{--</div>--}%
+%{--<div class="timeline-body">--}%
+%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--</li>--}%
+%{--<li class="timeline-inverted">--}%
+%{--<div class="timeline-image">--}%
+%{--<img class="img-circle img-responsive" src="img/about/4.jpg" alt="">--}%
+%{--</div>--}%
+%{--<div class="timeline-panel">--}%
+%{--<div class="timeline-heading">--}%
+%{--<h4>July 2014</h4>--}%
+%{--<h4 class="subheading">Phase Two Expansion</h4>--}%
+%{--</div>--}%
+%{--<div class="timeline-body">--}%
+%{--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--</li>--}%
+%{--<li class="timeline-inverted">--}%
+%{--<div class="timeline-image">--}%
+%{--<h4>Be Part--}%
+%{--<br>Of Our--}%
+%{--<br>Story!</h4>--}%
+%{--</div>--}%
+%{--</li>--}%
+%{--</ul>--}%
+%{--</div>--}%
+%{--</div>--}%
+%{--</div>--}%
 %{--</section>--}%
 
 <!-- Team Section -->
