@@ -41,7 +41,24 @@ class LayoutTagLib {
                         html += "<p class='text-muted'>${it.subtitulo}</p>"
                         html += '</div>'
                         html += '</div>'
+
                     }
+
+//                    html += '<script>'
+//                    html += '$(".btnArt").click(function () {'
+//                    html += 'var id = $(this).attr("at_id");'
+//                    html += '$.ajax({'
+//                    html += 'type:\'POST\','
+//                    html += "url:'${createLink(controller: 'principal', action: 'dialogos_ajax')}',"
+//                    html += 'data: {'
+//                    html += 'id: id'
+//                    html += '},'
+//                    html += 'success: function (msg) {'
+//                    html += '$("#aqui").html(msg);'
+//                    html += '}'
+//                    html += '});'
+//                    html += '});'
+//                    html += '</script>'
 
                     break;
                 case "MX01":
