@@ -111,6 +111,14 @@
 		background-color: #006dba !important;
 	}
 
+
+	%{--.fondo{--}%
+		%{--/*background-image: url("https://mdn.mozillademos.org/files/12057/starsolid.gif");*/--}%
+		%{--background-image: url("${resource(dir: 'images', file: 'starsolid.gif')}");--}%
+		%{--/*background-color: #006dba;*/--}%
+		%{--background-attachment: fixed;--}%
+	%{--}--}%
+
 	</style>
 
 </head>
@@ -160,8 +168,8 @@
 
 <g:each in="${secciones}" var="se" status="j">
 
-	<section id="${se?.id}" class="bg-light-gray portfolio">
-		<div class="container">
+	<section id="${se?.id}" class="bg-light-gray portfolio fondo" style="background-image: url('${resource(dir: 'images', file: se?.imagen)}'); background-attachment: fixed; background-position: center">
+		<div class="container fondo">
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<h2 class="section-heading">${se?.titulo}</h2>
