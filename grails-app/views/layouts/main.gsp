@@ -8,7 +8,7 @@
 
 	%{--<elm:favicon/>--}%
 
-	<title><g:layoutTitle default="Bitácora"/></title>
+	<title><g:layoutTitle default="Code"/></title>
 
 	<!-- Bootstrap core CSS 3.1.1 -->
 	<elm:bootstrapCss/>
