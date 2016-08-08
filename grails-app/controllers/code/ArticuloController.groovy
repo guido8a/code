@@ -109,6 +109,7 @@ class ArticuloController {
      * @render ERROR*[mensaje] cuando no se pudo grabar correctamente, SUCCESS*[mensaje] cuando se grabó correctamente
      */
     def save_ajax() {
+        println "params: $params"
         def articuloInstance = new Articulo()
         if(params.id) {
             articuloInstance = Articulo.get(params.id)
@@ -157,10 +158,11 @@ class ArticuloController {
     }
 
     def guardarArtc_ajax () {
-        println("guardarArtc params: " + params)
+        println "guardarArtc params.seccion: ${params.seccion}, id: ${params.id}, dscr: ${params.descripcion}"
+        println "session: $session"
 
         def articuloInstance
-        def edita = params.id? params.id : 0
+        def seccion = Seccion.get(params.seccion)
 
         if(params.id){
             articuloInstance = Articulo.get(params.id)
@@ -169,14 +171,16 @@ class ArticuloController {
             articuloInstance.fecha = new Date()
         }
         articuloInstance.properties = params
+        articuloInstance.seccion = seccion
+        println "seccion: $seccion, ${articuloInstance.seccion}"
 
-//        println "edita: $edita"
         try{
-            println "...1"
+            println "...1, >>> ${articuloInstance.descripcion}"
             articuloInstance.save(flush: true)
+//            articuloInstance.save()
 //            println "guardado ----- "
             articuloInstance.refresh()
-            println "....id: ${articuloInstance.id}"
+            println "....id: ${articuloInstance.id}, ${articuloInstance.seccion}"
             render "ok_${articuloInstance.id}"
 
         } catch (e) {

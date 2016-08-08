@@ -174,8 +174,7 @@
             $(function () {
 
                 $(".btnCrear").click(function() {
-//                    createEditRow();
-                    location.href = '${createLink(action: 'articulo')}/' + id
+                    location.href = '${createLink(action: 'articulo')}'
                     return false;
                 });
 

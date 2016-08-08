@@ -13,7 +13,7 @@
 	<!-- Bootstrap core CSS 3.1.1 -->
 	<elm:bootstrapCss/>
 
-	<script src="${resource(dir: 'js/plugins/ckeditor', file: 'ckeditor.js')}"></script>
+	%{--<script src="${resource(dir: 'js/plugins/ckeditor', file: 'ckeditor.js')}"></script>--}%
 
 	<link href="${resource(dir: 'font-awesome-4.2.0/css', file: 'font-awesome.min.css')}" rel="stylesheet">
 
