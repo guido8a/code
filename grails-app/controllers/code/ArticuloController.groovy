@@ -1,6 +1,7 @@
 package code
 
 import org.springframework.dao.DataIntegrityViolationException
+//import code.seguridad.Shield
 
 
 /**
@@ -14,7 +15,7 @@ class ArticuloController {
      * Acción que redirecciona a la lista (acción "list")
      */
     def index() {
-        redirect(action: "list", params: params)
+        redirect(action:"list", params: params)
     }
 
     /**
@@ -27,24 +28,24 @@ class ArticuloController {
         params = params.clone()
         params.max = params.max ? Math.min(params.max.toInteger(), 100) : 10
         params.offset = params.offset ?: 0
-        if (all) {
+        if(all) {
             params.remove("max")
             params.remove("offset")
         }
         def list
-        if (params.search) {
+        if(params.search) {
             def c = Articulo.createCriteria()
             list = c.list(params) {
                 or {
                     /* TODO: cambiar aqui segun sea necesario */
-
-                    ilike("descripcion", "%" + params.search + "%")
-                    ilike("estado", "%" + params.search + "%")
-                    ilike("imagen", "%" + params.search + "%")
-                    ilike("metaDescripcion", "%" + params.search + "%")
-                    ilike("subtitulo", "%" + params.search + "%")
-                    ilike("texto", "%" + params.search + "%")
-                    ilike("titulo", "%" + params.search + "%")
+                    
+                    ilike("descripcion", "%" + params.search + "%")  
+                    ilike("estado", "%" + params.search + "%")  
+                    ilike("imagen", "%" + params.search + "%")  
+                    ilike("metaDescripcion", "%" + params.search + "%")  
+                    ilike("subtitulo", "%" + params.search + "%")  
+                    ilike("texto", "%" + params.search + "%")  
+                    ilike("titulo", "%" + params.search + "%")  
                 }
             }
         } else {
@@ -73,9 +74,9 @@ class ArticuloController {
      * @render ERROR*[mensaje] cuando no se encontró el elemento
      */
     def show_ajax() {
-        if (params.id) {
+        if(params.id) {
             def articuloInstance = Articulo.get(params.id)
-            if (!articuloInstance) {
+            if(!articuloInstance) {
                 render "ERROR*No se encontró Articulo."
                 return
             }
@@ -92,9 +93,9 @@ class ArticuloController {
      */
     def form_ajax() {
         def articuloInstance = new Articulo()
-        if (params.id) {
+        if(params.id) {
             articuloInstance = Articulo.get(params.id)
-            if (!articuloInstance) {
+            if(!articuloInstance) {
                 render "ERROR*No se encontró Articulo."
                 return
             }
@@ -109,15 +110,15 @@ class ArticuloController {
      */
     def save_ajax() {
         def articuloInstance = new Articulo()
-        if (params.id) {
+        if(params.id) {
             articuloInstance = Articulo.get(params.id)
-            if (!articuloInstance) {
+            if(!articuloInstance) {
                 render "ERROR*No se encontró Articulo."
                 return
             }
         }
         articuloInstance.properties = params
-        if (!articuloInstance.save(flush: true)) {
+        if(!articuloInstance.save(flush: true)) {
             render "ERROR*Ha ocurrido un error al guardar Articulo: " + renderErrors(bean: articuloInstance)
             return
         }
@@ -130,7 +131,7 @@ class ArticuloController {
      * @render ERROR*[mensaje] cuando no se pudo eliminar correctamente, SUCCESS*[mensaje] cuando se eliminó correctamente
      */
     def delete_ajax() {
-        if (params.id) {
+        if(params.id) {
             def articuloInstance = Articulo.get(params.id)
             if (!articuloInstance) {
                 render "ERROR*No se encontró Articulo."
@@ -149,5 +150,66 @@ class ArticuloController {
             return
         }
     } //delete para eliminar via ajax
+
+    def articulo () {
+        def artc = Articulo.get(params.id)
+        return [artc: artc]
+    }
+
+    def guardarArtc_ajax () {
+        println("guardarArtc params: " + params)
+
+        def articuloInstance
+        def edita = params.id? params.id : 0
+
+        if(params.id){
+            articuloInstance = Articulo.get(params.id)
+        } else {
+            articuloInstance = new Articulo()
+            articuloInstance.fecha = new Date()
+        }
+        articuloInstance.properties = params
+
+//        println "edita: $edita"
+        try{
+            println "...1"
+            articuloInstance.save(flush: true)
+//            println "guardado ----- "
+            articuloInstance.refresh()
+            println "....id: ${articuloInstance.id}"
+            render "ok_${articuloInstance.id}"
+
+        } catch (e) {
+            println("error al guardar el problema " + articuloInstance.errors)
+            render "no"
+        }
+
+    }
+
+    def validarTitulo_ajax () {
+        def titulo = params.titulo
+
+        if(titulo.size() < 3){
+            render false
+            return
+        }else{
+            render true
+            return
+        }
+    }
+
+    def validarEstado_ajax () {
+        def estado = params.estado
+
+        if(estado in ['A', 'N']) {
+            render true
+            return
+        }else{
+            render false
+            return
+        }
+    }
+
+
 
 }
