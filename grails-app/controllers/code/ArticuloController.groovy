@@ -191,6 +191,7 @@ class ArticuloController {
     }
 
     def validarTitulo_ajax () {
+//        println "params: $params"
         def titulo = params.titulo
 
         if(titulo.size() < 3){
@@ -206,6 +207,19 @@ class ArticuloController {
         def estado = params.estado
 
         if(estado in ['A', 'N']) {
+            render true
+            return
+        }else{
+            render false
+            return
+        }
+    }
+
+    def validarMeta_ajax () {
+//        println "validarMeta_ajax .... $params"
+        def meta = params.meta
+
+        if(meta.size() > 0) {
             render true
             return
         }else{

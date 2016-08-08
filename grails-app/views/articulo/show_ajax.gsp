@@ -6,134 +6,32 @@
 </g:if>
 <g:else>
 
-    <g:if test="${articuloInstance?.titulo}">
-        <div class="row">
-            <div class="col-md-2 text-info">
-                Titulo
-            </div>
-            
-            <div class="col-md-3">
-                <g:fieldValue bean="${articuloInstance}" field="titulo"/>
-            </div>
-            
+    %{--Seccion: <h2 style="display: inline">${articuloInstance?.seccion.titulo}</h2><br/>--}%
+    <div style="text-align: center">
+        Título: <h2 style="display: inline">${articuloInstance?.titulo}</h2><br/>
+        Subtítulo: <h3 style="display: inline">${articuloInstance?.subtitulo}</h3><br/>
+        Descripción: <strong>${articuloInstance?.descripcion}</strong>
+    </div>
+
+    <div class="row" style="margin-bottom: 10px">
+        <strong style="margin-left: 15px">Artículo:</strong>
+        <div class="col-xs-12" style="background: #eeeeee; max-height: 400px; overflow: auto; padding: 20px;">
+            <util:renderHTML html="${articuloInstance?.texto}"/>
         </div>
-    </g:if>
-    
-    <g:if test="${articuloInstance?.subtitulo}">
-        <div class="row">
-            <div class="col-md-2 text-info">
-                Subtitulo
-            </div>
-            
-            <div class="col-md-3">
-                <g:fieldValue bean="${articuloInstance}" field="subtitulo"/>
-            </div>
-            
-        </div>
-    </g:if>
-    
-    <g:if test="${articuloInstance?.descripcion}">
-        <div class="row">
-            <div class="col-md-2 text-info">
-                Descripcion
-            </div>
-            
-            <div class="col-md-3">
-                <g:fieldValue bean="${articuloInstance}" field="descripcion"/>
-            </div>
-            
-        </div>
-    </g:if>
-    
-    <g:if test="${articuloInstance?.texto}">
-        <div class="row">
-            <div class="col-md-2 text-info">
-                Texto
-            </div>
-            
-            <div class="col-md-3">
-                <g:fieldValue bean="${articuloInstance}" field="texto"/>
-            </div>
-            
-        </div>
-    </g:if>
-    
-    <g:if test="${articuloInstance?.imagen}">
-        <div class="row">
-            <div class="col-md-2 text-info">
-                Imagen
-            </div>
-            
-            <div class="col-md-3">
-                <g:fieldValue bean="${articuloInstance}" field="imagen"/>
-            </div>
-            
-        </div>
-    </g:if>
-    
-    <g:if test="${articuloInstance?.metaDescripcion}">
-        <div class="row">
-            <div class="col-md-2 text-info">
-                Meta Descripcion
-            </div>
-            
-            <div class="col-md-3">
-                <g:fieldValue bean="${articuloInstance}" field="metaDescripcion"/>
-            </div>
-            
-        </div>
-    </g:if>
-    
-    <g:if test="${articuloInstance?.estado}">
-        <div class="row">
-            <div class="col-md-2 text-info">
-                Estado
-            </div>
-            
-            <div class="col-md-3">
-                <g:fieldValue bean="${articuloInstance}" field="estado"/>
-            </div>
-            
-        </div>
-    </g:if>
-    
-    <g:if test="${articuloInstance?.fecha}">
-        <div class="row">
-            <div class="col-md-2 text-info">
-                Fecha
-            </div>
-            
-            <div class="col-md-3">
-                <g:formatDate date="${articuloInstance?.fecha}" format="dd-MM-yyyy" />
-            </div>
-            
-        </div>
-    </g:if>
-    
-    <g:if test="${articuloInstance?.orden}">
-        <div class="row">
-            <div class="col-md-2 text-info">
-                Orden
-            </div>
-            
-            <div class="col-md-3">
-                <g:fieldValue bean="${articuloInstance}" field="orden"/>
-            </div>
-            
-        </div>
-    </g:if>
-    
-    <g:if test="${articuloInstance?.seccion}">
-        <div class="row">
-            <div class="col-md-2 text-info">
-                Seccion
-            </div>
-            
-            <div class="col-md-3">
-                ${articuloInstance?.seccion?.encodeAsHTML()}
-            </div>
-            
-        </div>
-    </g:if>
-    
+    </div>
+
+    <div>
+        <div style="text-align: center; width: 100%">Imagen:<img src="${resource(dir: 'images', file: articuloInstance.imagen)}" style="max-height: 120px;"/></div><br/>
+        Meta: <info>${articuloInstance?.metaDescripcion}</info><br/>
+        Estado: <strong>${articuloInstance?.estado}</strong><br/>
+        Creado el: <strong>${articuloInstance?.fecha}</strong><br/>
+        Orden: <strong>${articuloInstance?.orden}</strong>
+    </div>
+
 </g:else>
+
+<script type="text/javascript">
+    $(function () {
+        $("#dlTitulo").html("Sección: ${articuloInstance.seccion.titulo}")
+    });
+</script>

@@ -87,7 +87,7 @@
                     <span class="col-md-2 label label-primary text-info mediano">Sección</span>
                     <div class="col-md-10 text-info">
                         <g:select name="seccion" id="seccionId" from="${code.Seccion.list()}" optionKey="id"
-                            value="${artc.seccion.id}" optionValue="titulo" class="form-control"
+                            value="${artc?.seccion?.id}" optionValue="titulo" class="form-control"
                             style="color: #3d658a"/>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
 
             <div class="row">
 
-                <div class="col-md-8">
+                <div class="grupo col-md-8">
                     <span class="col-md-3 label label-primary text-info mediano">Título</span>
 
                     <div class="col-md-9">
@@ -166,19 +166,40 @@
             </div>
 
             <div class="row" style="margin-bottom: 20px">
-                <div class="col-md-12">
+                <span class="grupo col-md-12">
                     <span class="col-md-2 label label-primary text-info mediano">Meta</span>
 
-                    <div class="col-md-10">
-                        <g:textField name="metaDescripcion" id="metaDescripcion" class="form-control" maxlength="255"
+                    <div class="grupo col-md-10">
+                        <g:textField name="meta" id="metaDescripcion" class="form-control required" maxlength="255"
                                      value="${artc?.metaDescripcion}"/>
                     </div>
-                </div>
+                </span>
             </div>
 
         </g:form>
     </div>
 </div>
+
+
+<div class="modal fade " id="dialog" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background-color: #d8d8d8">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <span id="dlTitulo" style="font-size: large">Artículo</span>
+            </div>
+
+            <div class="modal-body" id="dialog-body" style="padding: 15px">
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
 
 
 <script type="text/javascript">
@@ -209,6 +230,7 @@
         var txto = CKEDITOR.instances.texto.getData();
         var base_id = '${artc?.id}';
         if ($form.valid()) {
+            console.log('validadddd');
             $.ajax({
                 type: 'POST',
                 url: "${createLink(action: 'guardarArtc_ajax')}",
@@ -230,10 +252,8 @@
                     if (parte[0] == 'ok') {
                         log("Problema guardado correctamente", "success")
                         setTimeout(function () {
+                            reCargar(parte[1]);
                         }, 500);
-                        //                            location.reload(true);
-                        reCargar(parte[1]);
-
                     } else {
                         log("Error al guardar el problema", "error")
                     }
@@ -271,12 +291,21 @@
                     }
                 }
             },
-            clave: {
+            estado: {
                 remote: {
                     url: "${createLink(action: 'validarEstado_ajax')}",
                     type: "post",
                     data: {
-                        id: $("#estado").val()
+                        estado: $("#estado").val()
+                    }
+                }
+            },
+            meta: {
+                remote: {
+                    url: "${createLink(action: 'validarMeta_ajax')}",
+                    type: "post",
+                    data: {
+                        meta: $("#meta").val()
                     }
                 }
             }
@@ -285,11 +314,15 @@
             titulo: {
                 remote: "El número mínimo de caracteres debe ser de 3"
             },
-            clave: {
+            estado: {
                 remote: "El número mínimo de caracteres debe ser de 3"
+            },
+            meta: {
+                remote: "El campo meta esta vacío"
             }
         }
     });
+
     $(".form-control").keydown(function (ev) {
         if (ev.keyCode == 13) {
             submitForm();
@@ -302,10 +335,10 @@
     $("#btnVer").click(function () {
         var id_base = ${artc?.id}
                 console.log('id:', id_base);
-        $("#dialog-body").html(spinner);
+//        $("#dialog-body").html(spinner);
         $.ajax({
             type: 'POST',
-            url: '${createLink(controller: 'base', action: 'ver_ajax')}',
+            url: '${createLink(controller: 'articulo', action: 'show_ajax')}',
             data: {
                 id: id_base
             },

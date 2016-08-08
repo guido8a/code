@@ -71,8 +71,29 @@
 
         <elm:pagination total="${articuloInstanceCount}" params="${params}"/>
 
-        <script type="text/javascript">
+    <div class="modal fade " id="dialog" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: #d8d8d8">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <span id="dlTitulo" style="font-size: large">Artículo</span>
+                </div>
+
+                <div class="modal-body" id="dialog-body" style="padding: 15px">
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+
+    <script type="text/javascript">
             var id = null;
+/*
             function submitForm() {
                 var $form = $("#frmArticulo");
                 var $btn = $("#dlgCreateEdit").find("#btnSave");
@@ -97,6 +118,8 @@
                 return false;
             } //else
             }
+*/
+
             function deleteRow(itemId) {
                 bootbox.dialog({
                     title   : "Alerta",
@@ -135,6 +158,7 @@
 
 
 
+/*
             function createEditRow(id) {
                 var title = id ? "Editar" : "Crear";
                 var data = id ? { id: id } : {};
@@ -170,6 +194,7 @@
                     } //success
                 }); //ajax
             } //createEdit
+*/
 
             $(function () {
 
@@ -189,6 +214,22 @@
                             icon: "fa fa-search",
                             action: function ($element) {
                                 var id = $element.data("id");
+
+//                                $("#dialog-body").html(spinner);
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '${createLink(action: 'show_ajax')}',
+                                    data: {
+                                        id: id
+                                    },
+                                    success: function (msg) {
+                                        $("#dialog-body").html(msg)
+                                    }
+                                });
+                                $("#dialog").modal("show");
+
+
+/*
                                 $.ajax({
                                     type: "POST",
                                     url: "${createLink(action:'show_ajax')}",
@@ -210,6 +251,7 @@
                                         });
                                     }
                                 });
+*/
                             }
                         },
                         editar: {
