@@ -29,9 +29,6 @@ class LayoutTagLib {
                     html +=     '<div class="col-md-9">'
                     html +=     '<div class="form-group">'
                     html +=      "<p class='' style='text-align: justify'>${articulos?.texto}</p>"
-//                    html +=     "<p class='' style='text-align: justify'> Tedein S.A. es una empresa comprometida con el buen uso y la utilización adecuada de la tecnología para la solución de problemas de las empresas."
-//                    html +=     '</br>Usualmente la tecnología llega a ser el mal necesario que las empresas deben sufrir. Tedein, busca hacer de la tecnología el principal aliado en el éxito empresarial.'
-//                    html +=     '</br>Su ámbito de acción es el desarrollo de grandes sistemas de información, los mismos que permiten aplicar los beneficios de la tecnología al quehacer cotidiano de la empresa. En este campo hemos desarrollado sistemas financieros, de control de producción, de construcción y presupuesto de obras civiles, de evaluación, etc.</p>'
                     html +=     '</div>'
                     html +=     '</div>'
                     html +=     '</div>'
@@ -40,8 +37,6 @@ class LayoutTagLib {
                     break;
                 case "LN01":
                     articulos = Articulo.findAllBySeccion(seccion, [sort:'orden', order: 'asc'])
-
-//                        html += '<div class="row text-center">'
                     articulos.each {
                         html += '<div class="col-md-4 col-sm-6">'
                         html += '<span class="fa-stack fa-4x">'
@@ -97,23 +92,6 @@ class LayoutTagLib {
                         }
                     }
 
-
-//                    html += '<script>'
-//                    html += '$(".btnArt").click(function () {'
-//                    html += 'var id = $(this).attr("at_id");'
-//                    html += '$.ajax({'
-//                    html += 'type:\'POST\','
-//                    html += "url:'${createLink(controller: 'principal', action: 'dialogos_ajax')}',"
-//                    html += 'data: {'
-//                    html += 'id: id'
-//                    html += '},'
-//                    html += 'success: function (msg) {'
-//                    html += '$("#aqui").html(msg);'
-//                    html += '}'
-//                    html += '});'
-//                    html += '});'
-//                    html += '</script>'
-
                     break;
                 case "MX01":
                     articulos = Articulo.findAllBySeccion(seccion)
@@ -123,7 +101,6 @@ class LayoutTagLib {
                         html += '<li>'
                         html += '<div class="timeline-image">'
                         html += '<span class="fa-stack fa-4x">'
-//                        html += '<img class="img-circle img-responsive" src="img/about/1.jpg" alt="">'
                         html += '<i class="fa fa-circle fa-stack-2x text-primary"></i>'
                         html += "<i class='fa fa-${it?.imagen} fa-stack-2x fa-inverse'></i>"
                         html += '</span>'
@@ -146,60 +123,6 @@ class LayoutTagLib {
                 default: html += ''
 
             }
-
-
-
-
-//                '\t\t\t\t\t<li class="timeline-inverted">\n' +
-//                '\t\t\t\t\t\t<div class="timeline-image">\n' +
-//                '\t\t\t\t\t\t\t<img class="img-circle img-responsive" src="img/about/2.jpg" alt="">\n' +
-//                '\t\t\t\t\t\t</div>\n' +
-//                '\t\t\t\t\t\t<div class="timeline-panel">\n' +
-//                '\t\t\t\t\t\t\t<div class="timeline-heading">\n' +
-//                '\t\t\t\t\t\t\t\t<h4>March 2011</h4>\n' +
-//                '\t\t\t\t\t\t\t\t<h4 class="subheading">An Agency is Born</h4>\n' +
-//                '\t\t\t\t\t\t\t</div>\n' +
-//                '\t\t\t\t\t\t\t<div class="timeline-body">\n' +
-//                '\t\t\t\t\t\t\t\t<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>\n' +
-//                '\t\t\t\t\t\t\t</div>\n' +
-//                '\t\t\t\t\t\t</div>\n' +
-//                '\t\t\t\t\t</li>\n' +
-//                '\t\t\t\t\t<li>\n' +
-//                '\t\t\t\t\t\t<div class="timeline-image">\n' +
-//                '\t\t\t\t\t\t\t<img class="img-circle img-responsive" src="img/about/3.jpg" alt="">\n' +
-//                '\t\t\t\t\t\t</div>\n' +
-//                '\t\t\t\t\t\t<div class="timeline-panel">\n' +
-//                '\t\t\t\t\t\t\t<div class="timeline-heading">\n' +
-//                '\t\t\t\t\t\t\t\t<h4>December 2012</h4>\n' +
-//                '\t\t\t\t\t\t\t\t<h4 class="subheading">Transition to Full Service</h4>\n' +
-//                '\t\t\t\t\t\t\t</div>\n' +
-//                '\t\t\t\t\t\t\t<div class="timeline-body">\n' +
-//                '\t\t\t\t\t\t\t\t<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>\n' +
-//                '\t\t\t\t\t\t\t</div>\n' +
-//                '\t\t\t\t\t\t</div>\n' +
-//                '\t\t\t\t\t</li>\n' +
-//                '\t\t\t\t\t<li class="timeline-inverted">\n' +
-//                '\t\t\t\t\t\t<div class="timeline-image">\n' +
-//                '\t\t\t\t\t\t\t<img class="img-circle img-responsive" src="img/about/4.jpg" alt="">\n' +
-//                '\t\t\t\t\t\t</div>\n' +
-//                '\t\t\t\t\t\t<div class="timeline-panel">\n' +
-//                '\t\t\t\t\t\t\t<div class="timeline-heading">\n' +
-//                '\t\t\t\t\t\t\t\t<h4>July 2014</h4>\n' +
-//                '\t\t\t\t\t\t\t\t<h4 class="subheading">Phase Two Expansion</h4>\n' +
-//                '\t\t\t\t\t\t\t</div>\n' +
-//                '\t\t\t\t\t\t\t<div class="timeline-body">\n' +
-//                '\t\t\t\t\t\t\t\t<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>\n' +
-//                '\t\t\t\t\t\t\t</div>\n' +
-//                '\t\t\t\t\t\t</div>\n' +
-//                '\t\t\t\t\t</li>\n' +
-//                '\t\t\t\t\t<li class="timeline-inverted">\n' +
-//                '\t\t\t\t\t\t<div class="timeline-image">\n' +
-//                '\t\t\t\t\t\t\t<h4>Be Part\n' +
-//                '\t\t\t\t\t\t\t\t<br>Of Our\n' +
-//                '\t\t\t\t\t\t\t\t<br>Story!</h4>\n' +
-//                '\t\t\t\t\t\t</div>\n' +
-//                '\t\t\t\t\t</li>\n' +
-
 
         out << html
     }
