@@ -408,7 +408,17 @@ Primary style
 		}
 	}
 
+	a:link {
+		color: #003347;
+	}
 
+	a:visited {
+		color: #222;
+	}
+
+	a:hover {
+		color: #772800;
+	}
 
 	</style>
 
