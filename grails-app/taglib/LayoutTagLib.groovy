@@ -65,7 +65,7 @@ class LayoutTagLib {
                             html += '</div>'
                             html += "<img src='${resource(dir: 'images', file: it.imagen)}' class='img-responsive' alt='${it.descripcion}' style='height: 150px'>"
                             html += '</a>'
-                            html += '<div class="portfolio-caption">'
+                            html += '<div class="">'
                             html += "<h4>${it.titulo}</h4>"
                             html += "<p class='text-muted'>${it.subtitulo}</p>"
                             html += '</div>'
@@ -83,7 +83,8 @@ class LayoutTagLib {
                             html += '</div>'
                             html += "<img src='${resource(dir: 'images', file: it.imagen)}' class='img-responsive' alt='${it.descripcion}' style='height: 150px'>"
                             html += '</a>'
-                            html += '<div class="portfolio-caption">'
+                            html += '<div class="col-md-4"></div>'
+                            html += '<div class="col-md-4">'
                             html += "<h4>${it.titulo}</h4>"
                             html += "<p class='text-muted'>${it.subtitulo}</p>"
                             html += '</div>'
