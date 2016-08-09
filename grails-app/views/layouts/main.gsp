@@ -6,7 +6,7 @@
 		<meta name="author" content="">
 
 
-	%{--<elm:favicon/>--}%
+	<elm:favicon/>
 
 	<title><g:layoutTitle default="Code"/></title>
 

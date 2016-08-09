@@ -9,6 +9,10 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
+	<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
+    <link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
+
 	<script src="${resource(dir: 'agency-theme/vendor/jquery', file: 'jquery.min.js')}"></script>
 	<script src="${resource(dir: 'agency-theme/vendor/jquery', file: 'jquery.js')}"></script>
 	<script src="${resource(dir: 'js/bootbox-4.3.0', file: 'js/bootbox.js')}"></script>
