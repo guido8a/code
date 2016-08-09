@@ -383,7 +383,7 @@ Primary style
 		color: #3d3536;
 	}
 	.cd-scrolling-bg.cd-color-3 {
-		background-color: #b4d7a8;
+		background-color: #94c3d7;
 		color: #3d3536;
 	}
 	@media only screen and (min-width: 768px) {
