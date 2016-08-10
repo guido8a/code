@@ -437,6 +437,9 @@ Primary style
 				<li>
 					<a class="page-scroll" href="#contact">Contacto</a>
 				</li>
+				<li>
+					<img id="foto" src="${resource(dir: 'images', file: 'tedein.jpeg')}" style="width: 50px; height: 50px"/>
+				</li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
