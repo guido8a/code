@@ -438,7 +438,9 @@ Primary style
 					<a class="page-scroll" href="#contact">Contacto</a>
 				</li>
 				<li>
-					<img id="foto" src="${resource(dir: 'images', file: 'tedein.jpeg')}" style="width: 50px; height: 50px"/>
+					<a href="#page-top" style="padding: 0" id="btnImagen">
+						<img id="foto" src="${resource(dir: 'images', file: 'tedein.jpeg')}" style="width: 50px; height: 50px"/>
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -584,6 +586,11 @@ Primary style
 
 
 <script type="text/javascript">
+
+
+
+
+
 
 	$("#btnEnviarMail").click(function () {
 
