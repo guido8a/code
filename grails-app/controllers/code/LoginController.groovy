@@ -32,9 +32,9 @@ class LoginController {
                 user = params.user
 //                pass = decodifica(params.password)
                 pass = params.pass.toString().encodeAsMD5()
-                println "usuario: ${user} password: ${pass}"
+//                println "usuario: ${user} password: ${pass}"
                 def usuario = Usuario.findWhere(login: user, password: pass, activo: 'A')
-                println "---> usuario: ${usuario}"
+//                println "---> usuario: ${usuario}"
                 if (usuario) {
                     session.usuario = usuario
                     redirect(controller: 'articulo', action: 'lista')
