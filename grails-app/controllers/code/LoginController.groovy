@@ -2,11 +2,10 @@ package code
 
 class LoginController {
 
-//    def loginService
-    def rand = new Random()
     def fecha = Calendar.instance
-    def semilla = fecha.time.time % 100
-    def token = rand.nextInt(semilla.toInteger()).toString().encodeAsMD5()
+    def rand = new Random(fecha.time.time)
+    def token = rand.nextInt().toString().encodeAsMD5()
+
 
     def index = { redirect(action: "login") }
 
@@ -18,14 +17,14 @@ class LoginController {
         if (usu) {
             redirect(controller: cn, action: an)
         }
-        println "token: $token"
+//        println "token: $token"
         [token: token]
     }
 
 
     def validar() {
         if (request.method == 'POST' && token == params.auth_tk) {
-            println "----------llega:" + params
+//            println "----------llega:" + params
             def user = ""
             def pass = ""
             //println "decodificado: ${pass}"

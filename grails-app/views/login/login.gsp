@@ -115,6 +115,11 @@
                 doLogin();
             });
 
+            $("#btn-salir").click(function () {
+                var url = "${createLink(controller: 'principal', action: 'index')}";
+                location.href = url
+            });
+
             $frm.find("input").keyup(function (ev) {
                 if (ev.keyCode == 13) {
                     doLogin();
