@@ -569,7 +569,7 @@ Primary style
 			%{--</div>--}%
 			<div class="col-md-4">
 				<ul class="list-inline quicklinks">
-					<li><a href="#">Login</a>
+					<li><a href="${createLink(controller: 'login', action: 'login')}">Login</a>
 					</li>
 				</ul>
 			</div>

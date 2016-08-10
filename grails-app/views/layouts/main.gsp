@@ -80,16 +80,10 @@
 </head>
 
 <body>
-%{--<div id="modalTabelGray"></div>--}%
 
-%{--
-<div id="modalDiv" class="ui-corner-all">
-	<div class="loading-title">Procesando</div>
-	<img src="${resource(dir: 'images', file: 'spinner32.gif')}">
-
-	<div class="loading-footer">Espere por favor</div>
+<div id="spinner" class="spinner" style="display:none;">
+	<img src="${resource(dir:'images',file:'spinner.gif')}" alt="Spinner" />
 </div>
---}%
 
 <div class="container" style="min-width: 1000px !important;">
 	<g:layoutBody/>

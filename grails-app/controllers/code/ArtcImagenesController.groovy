@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage
 import static java.awt.RenderingHints.KEY_INTERPOLATION
 import static java.awt.RenderingHints.VALUE_INTERPOLATION_BICUBIC
 
-class ArtcImagenesController {
+class ArtcImagenesController extends code.Shield {
 
     def index() {}
 

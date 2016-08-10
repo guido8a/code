@@ -7,7 +7,7 @@ import org.springframework.dao.DataIntegrityViolationException
 /**
  * Controlador que muestra las pantallas de manejo de Articulo
  */
-class ArticuloController {
+class ArticuloController extends code.Shield {
 
     static allowedMethods = [save_ajax: "POST", delete_ajax: "POST"]
 

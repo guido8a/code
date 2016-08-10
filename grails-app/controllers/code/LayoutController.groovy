@@ -6,7 +6,7 @@ import org.springframework.dao.DataIntegrityViolationException
 /**
  * Controlador que muestra las pantallas de manejo de Layout
  */
-class LayoutController {
+class LayoutController extends code.Shield {
 
     static allowedMethods = [save_ajax: "POST", delete_ajax: "POST"]
 

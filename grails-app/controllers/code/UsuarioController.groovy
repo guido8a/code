@@ -6,7 +6,7 @@ import org.springframework.dao.DataIntegrityViolationException
 /**
  * Controlador que muestra las pantallas de manejo de Usuario
  */
-class UsuarioController {
+class UsuarioController extends code.Shield {
 
     static allowedMethods = [save_ajax: "POST", delete_ajax: "POST"]
 

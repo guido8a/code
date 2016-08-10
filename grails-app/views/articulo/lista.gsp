@@ -29,7 +29,7 @@
         <g:link action="form" class="btn btn-primary btnCrear" >
             <i class="fa fa-file-o"></i> Crear Artículo
         </g:link>
-        <g:link action="" controller="" class="btn btn-info btnSalir" >
+        <g:link action="logout" controller="login" class="btn btn-info btnSalir" >
             <i class="fa fa-close"></i> Logout
         </g:link>
     </div>
