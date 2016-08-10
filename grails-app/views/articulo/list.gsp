@@ -12,9 +12,9 @@
 
     <!-- botones -->
         %{--<div class="btn-toolbar toolbar">--}%
-            %{--<div class="btn-group">--}%
-                %{--<g:link action="form" class="btn btn-default btnCrear">--}%
-                    %{--<i class="fa fa-file-o"></i> Crear--}%
+            %{--<div class="btn-group" style="float: right;">--}%
+                %{--<g:link action="form" class="btn btn-primary btnCrear" >--}%
+                    %{--<i class="fa fa-file-o"></i> Crear Artículo--}%
                 %{--</g:link>--}%
             %{--</div>--}%
             %{--<div class="btn-group pull-right col-md-3">--}%

@@ -25,6 +25,14 @@
             <g:select name="seccion_name" id="seccion" optionKey="id" optionValue="titulo"
                       class="form-control" from="${code.Seccion.list([sort: 'titulo', order: 'asc'])}"/>
         </div>
+    <div class="btn-group" style="float: right;">
+        <g:link action="form" class="btn btn-primary btnCrear" >
+            <i class="fa fa-file-o"></i> Crear Artículo
+        </g:link>
+        <g:link action="" controller="" class="btn btn-info btnSalir" >
+            <i class="fa fa-close"></i> Logout
+        </g:link>
+    </div>
     </div>
 
     <div class="row" id="tablaArticulos">

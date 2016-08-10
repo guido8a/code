@@ -54,12 +54,17 @@
 
 <elm:flashMessage tipo="${flash.tipo}" clase="${flash.clase}">${flash.message}</elm:flashMessage>
 
-<div class="col-md-12" style="margin-top: -50px;">Artículo</div>
+%{--<div class="col-md-12" style="margin-top: -50px;">Artículo</div>--}%
+<div class="btn-group" style="float: left; margin-bottom: 10px">
+    <g:link controller="articulo" action="lista" class="btn btn-primary " title="Regresar a la lista de artículos">
+        <i class="fa fa-chevron-left"></i> Regresar
+    </g:link>
+</div>
 
 <div class="panel panel-primary col-md-12">
 
     <div class="panel-heading">
-        <h3 class="panel-title" style="text-align: right"><i class="fa fa-pencil-square"></i> Bitácora - Artículo
+        <h3 class="panel-title" style="text-align: right"><i class="fa fa-pencil-square"></i> Artículo
         </h3>
 
         <a href="#" id="btnGuardar" class="btn btn-sm btn-success sobrepuesto" title="Guardar información">
