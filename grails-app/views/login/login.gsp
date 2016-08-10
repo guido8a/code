@@ -2,8 +2,7 @@
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="layout" content="main" />
-  <g:set var="entityName" value="${message(code: 'prmo.label', default: 'Prmo')}" />
-  <title><g:message code="default.create.label" args="[entityName]" /></title>
+  <title>Administración del sitio</title>
 
 <style type="text/css">
 @page {
