@@ -63,8 +63,14 @@ class ArticuloController {
      * @return articuloInstanceList: la lista de elementos filtrados, articuloInstanceCount: la cantidad total de elementos (sin máximo)
      */
     def list() {
-        def articuloInstanceList = getList(params, false)
-        def articuloInstanceCount = getList(params, true).size()
+
+//        println("params lista"  + params)
+
+        def seccion = Seccion.get(params.id)
+        def articuloInstanceList = Articulo.findAllBySeccion(seccion)
+        def articuloInstanceCount = articuloInstanceList.size()
+//        def articuloInstanceList = getList(params, false)
+//        def articuloInstanceCount = getList(params, true).size()
         return [articuloInstanceList: articuloInstanceList, articuloInstanceCount: articuloInstanceCount]
     }
 
@@ -226,6 +232,10 @@ class ArticuloController {
             render false
             return
         }
+    }
+
+    def lista () {
+
     }
 
 

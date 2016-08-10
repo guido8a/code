@@ -86,17 +86,6 @@
 		height: 100% !important;
 	}
 
-	body:link{
-		color: #ff8123 !important;
-	}
-
-	body:visited {
-		color: #ff0e0c !important;
-	}
-
-	body:active {
-		color: #ff0e0c !important;
-	}
 
 	.cd-fixed-bg {
 		min-height: 100%;

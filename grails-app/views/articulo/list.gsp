@@ -1,33 +1,33 @@
 
-<%@ page import="code.Articulo" %>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="layout" content="main">
-        <title>Lista de Articulo</title>
-    </head>
-    <body>
+%{--<%@ page import="code.Articulo" %>--}%
+%{--<!DOCTYPE html>--}%
+%{--<html>--}%
+    %{--<head>--}%
+        %{--<meta name="layout" content="main">--}%
+        %{--<title>Lista de Articulo</title>--}%
+    %{--</head>--}%
+    %{--<body>--}%
 
         <elm:flashMessage tipo="${flash.tipo}" clase="${flash.clase}">${flash.message}</elm:flashMessage>
 
     <!-- botones -->
-        <div class="btn-toolbar toolbar">
-            <div class="btn-group">
-                <g:link action="form" class="btn btn-default btnCrear">
-                    <i class="fa fa-file-o"></i> Crear
-                </g:link>
-            </div>
-            <div class="btn-group pull-right col-md-3">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Buscar" value="${params.search}">
-                    <span class="input-group-btn">
-                        <g:link action="list" class="btn btn-default btn-search" type="button">
-                            <i class="fa fa-search"></i>&nbsp;
-                        </g:link>
-                    </span>
-                </div><!-- /input-group -->
-            </div>
-        </div>
+        %{--<div class="btn-toolbar toolbar">--}%
+            %{--<div class="btn-group">--}%
+                %{--<g:link action="form" class="btn btn-default btnCrear">--}%
+                    %{--<i class="fa fa-file-o"></i> Crear--}%
+                %{--</g:link>--}%
+            %{--</div>--}%
+            %{--<div class="btn-group pull-right col-md-3">--}%
+                %{--<div class="input-group">--}%
+                    %{--<input type="text" class="form-control" placeholder="Buscar" value="${params.search}">--}%
+                    %{--<span class="input-group-btn">--}%
+                        %{--<g:link action="list" class="btn btn-default btn-search" type="button">--}%
+                            %{--<i class="fa fa-search"></i>&nbsp;--}%
+                        %{--</g:link>--}%
+                    %{--</span>--}%
+                %{--</div><!-- /input-group -->--}%
+            %{--</div>--}%
+        %{--</div>--}%
 
         <table class="table table-condensed table-bordered table-striped">
             <thead>
@@ -285,5 +285,5 @@
             });
         </script>
 
-    </body>
-</html>
+    %{--</body>--}%
+%{--</html>--}%
