@@ -106,6 +106,7 @@ class SeccionController extends code.Shield {
      * @render ERROR*[mensaje] cuando no se pudo grabar correctamente, SUCCESS*[mensaje] cuando se grabó correctamente
      */
     def save_ajax() {
+        println("save seccion  " + params)
         def seccionInstance = new Seccion()
         if (params.id) {
             seccionInstance = Seccion.get(params.id)

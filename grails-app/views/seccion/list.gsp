@@ -79,18 +79,19 @@
                 var $form = $("#frmSeccion");
                 var $btn = $("#dlgCreateEdit").find("#btnSave");
                 if ($form.valid()) {
-                $btn.replaceWith(spinner);
+//                $btn.replaceWith(spinner);
                     $.ajax({
                         type    : "POST",
                         url     : '${createLink(action:'save_ajax')}',
                         data    : $form.serialize(),
                             success : function (msg) {
                         var parts = msg.split("_");
-                        log(parts[1], parts[0] == "OK" ? "success" : "error"); // log(msg, type, title, hide)
-                        if (parts[0] == "OK") {
+//                        log(parts[1], parts[0] == "OK" ? "success" : "error"); // log(msg, type, title, hide)
+                        if (parts[0] == "SUCCESS") {
+                            log("Sección creada correctamente","success");
                             location.reload(true);
                         } else {
-                            spinner.replaceWith($btn);
+                            log("Error al crear la sección","error");
                             return false;
                         }
                     }

@@ -14,8 +14,8 @@
                 <label for="titulo" class="col-md-2 control-label text-info">
                     Título Sección
                 </label>
-                <div class="col-md-8">
-                    <g:textArea name="titulo" cols="40" rows="5" maxlength="255" class="form-control" value="${seccionInstance?.titulo}" style="height: 85px; resize: none"/>
+                <div class="col-md-10">
+                    <g:textArea name="titulo" cols="40" rows="5" maxlength="255" class="form-control" value="${seccionInstance?.titulo}" style="height: 65px; resize: none"/>
                 </div>
 
             </span>
@@ -28,7 +28,7 @@
                 <label for="menu" class="col-md-2 control-label text-info">
                     Menú
                 </label>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <g:textField name="menu" maxlength="63" required="" class="form-control required" value="${seccionInstance?.menu}"/>
                 </div>
                 
@@ -41,8 +41,8 @@
                 <label for="subtitulo" class="col-md-2 control-label text-info">
                     Subtitulo
                 </label>
-                <div class="col-md-8">
-                    <g:textArea name="subtitulo" cols="40" rows="5" maxlength="255" class="form-control" value="${seccionInstance?.subtitulo}" style="height: 85px; resize: none"/>
+                <div class="col-md-10">
+                    <g:textArea name="subtitulo" cols="40" rows="5" maxlength="255" class="form-control" value="${seccionInstance?.subtitulo}" style="height: 65px; resize: none"/>
                 </div>
                 
             </span>
@@ -92,7 +92,7 @@
                     Layout
                 </label>
                 <div class="col-md-8">
-                    <g:select id="layout" name="layout.id" from="${code.Layout.list()}" optionKey="id" required="" value="${seccionInstance?.layout?.id}" class="many-to-one form-control"/>
+                    <g:select id="layoutId" name="layout" from="${code.Layout.list()}" optionKey="id" required="" value="${seccionInstance?.layout?.id}" class="many-to-one form-control"/>
                 </div>
                 
             </span>
@@ -104,7 +104,7 @@
                     Sitio
                 </label>
                 <div class="col-md-8">
-                    <g:select id="sitio" name="sitio.id" from="${code.Sitio.list()}" optionKey="id" required="" value="${seccionInstance?.sitio?.id}" class="many-to-one form-control"/>
+                    <g:select id="sitioId" name="sitio" from="${code.Sitio.list()}" optionKey="id" required="" value="${seccionInstance?.sitio?.id}" class="many-to-one form-control"/>
                 </div>
                 
             </span>
