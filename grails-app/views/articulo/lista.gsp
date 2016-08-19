@@ -20,14 +20,17 @@
     %{--</div>--}%
 
     <div class="row">
-        <div class="col-md-2 negrilla control-label">Sección: </div>
+        <div class="col-md-1 negrilla control-label">Sección: </div>
         <div class="col-md-7">
             <g:select name="seccion_name" id="seccion" optionKey="id" optionValue="titulo"
                       class="form-control" from="${code.Seccion.list([sort: 'titulo', order: 'asc'])}"/>
         </div>
     <div class="btn-group" style="float: right;">
+        <g:link action="list" controller="seccion" class="btn btn-primary" >
+            <i class="fa fa-tasks"></i> Secciones
+        </g:link>
         <g:link action="form" class="btn btn-primary btnCrear" >
-            <i class="fa fa-file-o"></i> Crear Artículo
+            <i class="fa fa-file-text-o"></i> Crear Artículo
         </g:link>
         <g:link action="logout" controller="login" class="btn btn-info btnSalir" >
             <i class="fa fa-close"></i> Logout

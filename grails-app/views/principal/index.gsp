@@ -464,14 +464,14 @@ Primary style
 <g:each in="${secciones}" var="se" status="j">
 
 	<div class="cd-fixed-bg cd-bg-${j+1}">
-		%{--<h2>Lorem ipsum dolor sit amet.</h2>--}%
-	</div> <!-- cd-fixed-bg -->
+
+	</div>
 
 
 	<div class="cd-scrolling-bg cd-color-3">
 
 		%{--<section id="${se?.id}" class="bg-light-gray portfolio fondo" style="background-image: url('${resource(dir: 'images', file: se?.imagen)}'); background-attachment: fixed; background-position: center">--}%
-		<section id="${se?.id}" class="portfolio fondo">
+		<section id="${se?.id}" class="portfolio fondo" style="display: block !important;">
 			<div class="container fondo">
 				<div class="row">
 					<div class="col-lg-12 text-center">
@@ -626,7 +626,6 @@ Primary style
 
 	$(".btnArt").click(function () {
 		var id = $(this).attr("at_id");
-
 		$.ajax({
 			type:'POST',
 			url:"${createLink(controller: 'principal', action: 'dialogos_ajax')}",
