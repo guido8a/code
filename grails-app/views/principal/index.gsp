@@ -463,7 +463,8 @@ Primary style
 
 <g:each in="${secciones}" var="se" status="j">
 
-	<div class="cd-fixed-bg cd-bg-${j+1}">
+	%{--<div class="cd-fixed-bg cd-bg-${j+1}">--}%
+	<div class="cd-fixed-bg " style="background-image: url('${resource(dir: 'images', file: se?.imagen)}')">
 
 	</div>
 
@@ -479,8 +480,10 @@ Primary style
 						<h3 class="section-subheading text-muted">${se?.subtitulo}</h3>
 					</div>
 				</div>
-				<elm:plantilla  seccion="${se?.id}"/>
 
+				<g:if test="${se?.imagen}">
+					<elm:plantilla  seccion="${se?.id}"/>
+				</g:if>
 			</div>
 		</section>
 	</div>

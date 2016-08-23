@@ -44,7 +44,7 @@
                     
                     <g:sortableColumn property="orden" title="Orden" />
                     
-                    %{--<g:sortableColumn property="estado" title="Estado" />--}%
+                    <g:sortableColumn property="estado" title="Estado" />
                     
                     %{--<g:sortableColumn property="imagen" title="Imagen" />--}%
                     
@@ -61,6 +61,8 @@
                         <td>${fieldValue(bean: seccionInstance, field: "subtitulo")}</td>
                         
                         <td>${fieldValue(bean: seccionInstance, field: "orden")}</td>
+
+                        <td>${seccionInstance?.estado == 'A' ? 'Activo' : 'No Activo' }</td>
                         
                         %{--<td>${fieldValue(bean: seccionInstance, field: "estado")}</td>--}%
                         
@@ -89,7 +91,9 @@
 //                        log(parts[1], parts[0] == "OK" ? "success" : "error"); // log(msg, type, title, hide)
                         if (parts[0] == "SUCCESS") {
                             log("Sección creada correctamente","success");
-                            location.reload(true);
+                            setTimeout(function () {
+                                location.reload(true);
+                            }, 500);
                         } else {
                             log("Error al crear la sección","error");
                             return false;
@@ -223,6 +227,15 @@
                                 createEditRow(id);
                             }
                         },
+                        imagen : {
+                            label            : "Cargar Imagen",
+                            icon             : "fa fa-photo",
+                            separator_before : true,
+                            action           : function ($element) {
+                                var id = $element.data("id");
+                                cargarImagen(id);
+                            }
+                        },
                         eliminar : {
                             label            : "Eliminar",
                             icon             : "fa fa-trash-o",
@@ -241,6 +254,37 @@
                     }
                 });
 
+
+
+                function cargarImagen(id) {
+                    var idImagen = id;
+                    $.ajax({
+                        type    : "POST",
+                        url     : "${createLink(controller: 'seccion', action:'cargarImagen_ajax')}",
+                        data    : {
+                            id: idImagen
+                        },
+                        success : function (msg) {
+                            var b = bootbox.dialog({
+                                id      : "dlgCargarImagen",
+                                title   : "Cargar Imagen",
+                                message : msg,
+                                buttons : {
+                                    cancelar : {
+                                        label     : "Cancelar",
+                                        className : "btn-primary",
+                                        callback  : function () {
+//                                            location.reload(true)
+                                        }
+                                    }
+                                } //buttons
+                            }); //dialog
+                            setTimeout(function () {
+                                b.find(".form-control").first().focus()
+                            }, 500);
+                        } //success
+                    }); //ajax
+                } //createEdit
 
 
 

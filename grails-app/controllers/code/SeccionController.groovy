@@ -1,6 +1,13 @@
 package code
 
+import groovy.json.JsonBuilder
 import org.springframework.dao.DataIntegrityViolationException
+
+import javax.imageio.ImageIO
+import java.awt.image.BufferedImage
+
+import static java.awt.RenderingHints.KEY_INTERPOLATION
+import static java.awt.RenderingHints.VALUE_INTERPOLATION_BICUBIC
 
 
 /**
@@ -106,7 +113,7 @@ class SeccionController extends code.Shield {
      * @render ERROR*[mensaje] cuando no se pudo grabar correctamente, SUCCESS*[mensaje] cuando se grabó correctamente
      */
     def save_ajax() {
-        println("save seccion  " + params)
+//        println("save seccion  " + params)
         def seccionInstance = new Seccion()
         if (params.id) {
             seccionInstance = Seccion.get(params.id)
@@ -148,5 +155,139 @@ class SeccionController extends code.Shield {
             return
         }
     } //delete para eliminar via ajax
+
+
+    def cargarImagen_ajax () {
+        println("params cargar imagen " + params)
+
+        def seccion = Seccion.get(params.id)
+        return [seccion: seccion]
+    }
+
+
+    def uploadFile() {
+        println("params upload " + params)
+        def path = servletContext.getRealPath("/") + "images/"
+        new File(path).mkdirs()
+//        def dia = new Date().format("dd-MM-yyyy_HH_mm_ss").toString()
+        def nombre
+        def seccion = Seccion.get(params.id)
+//        def consultora = Consultora.get(params.id)
+
+        def f = request.getFile('file')  //archivo = name del input type file
+
+        def okContents = ['image/png': "png", 'image/jpeg': "jpeg", 'image/jpg': "jpg"]
+
+        if (f && !f.empty) {
+            def fileName = f.getOriginalFilename() //nombre original del archivo
+            def ext
+
+            if (okContents.containsKey(f.getContentType())) {
+                ext = okContents[f.getContentType()]
+//                fileName = fileName + "." + ext
+                fileName = fileName
+                def pathFile = path + fileName
+                nombre = fileName
+                println("nombre " + nombre)
+                try {
+                    f.transferTo(new File(pathFile)) // guarda el archivo subido al nuevo path
+                } catch (e) {
+                    println "????????\n" + e + "\n???????????"
+                }
+
+                if (!seccion.imagen || seccion.imagen != nombre) {
+                    def fotoOld = seccion.imagen
+                    if (fotoOld) {
+                        def file = new File(path + fotoOld)
+                        file.delete()
+                    }
+                    seccion.imagen = nombre
+                    if (seccion.save(flush: true)) {
+                        def data = [
+                                files: [
+                                        [
+                                                name: nombre,
+                                                url : resource(dir: 'images/', file: nombre),
+                                                size: f.getSize(),
+                                                url : pathFile
+                                        ]
+                                ]
+                        ]
+                        def json = new JsonBuilder(data)
+                        render json
+                        return
+                    } else {
+                        def data = [
+                                files: [
+                                        [
+                                                name : nombre,
+                                                size : f.getSize(),
+                                                error: "Ha ocurrido un error al guardar"
+                                        ]
+                                ]
+                        ]
+                        def json = new JsonBuilder(data)
+                        render json
+                        return
+                    }
+                } else {
+                    def data = [
+                            files: [
+                                    [
+                                            name: nombre,
+                                            url : resource(dir: 'images/', file: nombre),
+                                            size: f.getSize(),
+                                            url : pathFile
+                                    ]
+                            ]
+                    ]
+                    def json = new JsonBuilder(data)
+                    render json
+                    return
+                }
+            } else {
+                def data = [
+                        files: [
+                                [
+//                                        name : fileName + "." + ext,
+                                        name : fileName,
+                                        size : f.getSize(),
+                                        error: "Extensión no permitida"
+                                ]
+                        ]
+                ]
+
+                def json = new JsonBuilder(data)
+                render json
+                return
+            }
+        }
+        render "OK_${nombre}"
+    }
+
+
+    def seccionImagen_ajax () {
+        def seccion = Seccion.get(params.id)
+
+        def path = servletContext.getRealPath("/") + "images/" //web-app/archivos
+        def img
+        def w
+        def h
+        if (seccion?.imagen) {
+            if(ImageIO?.read(new File(path + seccion.imagen))){
+                img = ImageIO?.read(new File(path + seccion.imagen));
+                w = img.getWidth();
+                h = img.getHeight();
+            }
+        } else {
+            w = 0
+            h = 0
+        }
+        return [seccion: seccion, w: w, h: h]
+    }
+
+
+
+
 
 }

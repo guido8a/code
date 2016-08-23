@@ -71,20 +71,20 @@
             </span>
         </div>
 
-        <div class="form-group ${hasErrors(bean: seccionInstance, field: 'imagen', 'error')} ">
-            <span class="grupo">
-                <label for="imagen" class="col-md-2 control-label text-info">
-                    Imagen
-                </label>
-                <div class="col-md-6">
-                    <div class="btn-group">
-                        <g:link controller="articulo" action="lista" class="btn btn-success">
-                            <i class="fa fa-file-photo-o"></i> Cargar Imagen
-                        </g:link>
-                    </div>
-                </div>
-            </span>
-        </div>
+        %{--<div class="form-group ${hasErrors(bean: seccionInstance, field: 'imagen', 'error')} ">--}%
+            %{--<span class="grupo">--}%
+                %{--<label for="imagen" class="col-md-2 control-label text-info">--}%
+                    %{--Imagen--}%
+                %{--</label>--}%
+                %{--<div class="col-md-6">--}%
+                    %{--<div class="btn-group">--}%
+                        %{--<g:link controller="articulo" action="lista" class="btn btn-success btnCargarImagen">--}%
+                            %{--<i class="fa fa-file-photo-o"></i> Cargar Imagen--}%
+                        %{--</g:link>--}%
+                    %{--</div>--}%
+                %{--</div>--}%
+            %{--</span>--}%
+        %{--</div>--}%
         
         <div class="form-group ${hasErrors(bean: seccionInstance, field: 'layout', 'error')} ">
             <span class="grupo">
@@ -134,6 +134,13 @@
             }
             return true;
         });
+
+
+
+
+
+
+
     </script>
 
 </g:else>

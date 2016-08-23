@@ -24,11 +24,15 @@ class LayoutTagLib {
                     html +=     '<div class="col-lg-12">'
                     html +=     '<div class="row">'
                     html +=     '<div class="col-md-3">'
-                    html +=     "<img src='${resource(dir: 'images', file: articulos.imagen)}' style='height: 150px'>"
+                    html +=     "<img src='${resource(dir: 'images', file: articulos?.imagen)}' style='height: 150px'>"
                     html +=     '</div>'
                     html +=     '<div class="col-md-9">'
                     html +=     '<div class="form-group">'
-                    html +=      "<p class='' style='text-align: justify'>${articulos?.texto}</p>"
+                    if(articulos?.texto){
+                        html +=      "<p class='' style='text-align: justify'>${articulos?.texto}</p>"
+                    }else{
+                        html +=      "<p class='' style='text-align: justify'>No se ha ingresado ningún texto!</p>"
+                    }
                     html +=     '</div>'
                     html +=     '</div>'
                     html +=     '</div>'
