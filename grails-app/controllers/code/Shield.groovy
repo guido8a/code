@@ -8,7 +8,8 @@ class Shield {
      */
     def auth() {
         if(!session.usuario){
-            redirect(controller:'login',action:'login')
+            render "<script type='text/javascript'> window.location.href = '${createLink(controller:'login', action:'login')}' </script>"
+//            redirect(controller:'login',action:'login')
             session.finalize()
             return false
         } else {
