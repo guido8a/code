@@ -8,6 +8,9 @@ class Shield {
      */
     def auth() {
         if(!session.usuario){
+            if(controllerName != "inicio" && actionName != "index") {
+                flash.message = "Usted ha superado el tiempo de inactividad máximo de la sesión"
+            }
             render "<script type='text/javascript'> window.location.href = '${createLink(controller:'login', action:'login')}' </script>"
 //            redirect(controller:'login',action:'login')
             session.finalize()
