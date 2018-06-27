@@ -19,11 +19,13 @@
 
 	<title>TEDEIN S.A.</title>
 
+	<link href='${resource(dir: 'js/datedropper3', file: 'datedropper.js')}' rel='stylesheet'>
+	<link href='${resource(dir: 'js/datedropper3', file: 'datedropper.min.js')}' rel='stylesheet'>
+
 	<!-- Bootstrap Core CSS -->
 	%{--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">--}%
 	%{--<link href='${resource(dir: 'bootstrap-3.1.1', file: 'css/bootstrap.min.css')}' rel='stylesheet'>--}%
 	<link href='${resource(dir: 'agency-theme/vendor/bootstrap', file: 'css/bootstrap.min.css')}' rel='stylesheet'>
-
 
 	<!-- Custom Fonts -->
 	%{--<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">--}%
@@ -213,15 +215,6 @@ Primary style
 		}
 	}
 
-	/*.cd-main-nav {*/
-	/*float: right;*/
-	/*margin-right: 5%;*/
-	/*width: 44px;*/
-	/*height: 100%;*/
-	/*background: url("../img/cd-icon-menu.svg") no-repeat center center;*/
-	/*background-size: 44px 44px;*/
-	/*cursor: pointer;*/
-	/*}*/
 	.cd-main-nav ul {
 		position: absolute;
 		top: 0;
@@ -384,7 +377,7 @@ Primary style
 		color: #3d3536;
 	}
 	.cd-scrolling-bg.cd-color-3 {
-		background-color: #94c3d7;
+		background-color: #fffff9;
 		color: #3d3536;
 	}
 	@media only screen and (min-width: 768px) {
@@ -414,6 +407,7 @@ Primary style
 </head>
 
 <body id="page-top" class="index">
+
 
 <!-- Navigation -->
 <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -463,15 +457,9 @@ Primary style
 
 <g:each in="${secciones}" var="se" status="j">
 
-	%{--<div class="cd-fixed-bg cd-bg-${j+1}">--}%
-	<div class="cd-fixed-bg " style="background-image: url('${resource(dir: 'images', file: se?.imagen)}')">
-
-	</div>
-
+	%{--<div class="cd-fixed-bg " style="background-image: url('${resource(dir: 'images', file: se?.imagen)}')"></div>--}%
 
 	<div class="cd-scrolling-bg cd-color-3">
-
-		%{--<section id="${se?.id}" class="bg-light-gray portfolio fondo" style="background-image: url('${resource(dir: 'images', file: se?.imagen)}'); background-attachment: fixed; background-position: center">--}%
 		<section id="${se?.id}" class="portfolio fondo" style="display: block !important;">
 			<div class="container fondo">
 				<div class="row">
@@ -565,16 +553,6 @@ Primary style
 			<div class="col-md-4">
 				<span class="copyright">Copyright &copy; Tedein S.A. ${new java.util.Date().format("yyyy")} </span>
 			</div>
-			%{--<div class="col-md-4">--}%
-			%{--<ul class="list-inline social-buttons">--}%
-			%{--<li><a href="#"><i class="fa fa-twitter"></i></a>--}%
-			%{--</li>--}%
-			%{--<li><a href="#"><i class="fa fa-facebook"></i></a>--}%
-			%{--</li>--}%
-			%{--<li><a href="#"><i class="fa fa-linkedin"></i></a>--}%
-			%{--</li>--}%
-			%{--</ul>--}%
-			%{--</div>--}%
 			<div class="col-md-4">
 				<ul class="list-inline quicklinks">
 					<li><a href="${createLink(controller: 'login', action: 'login')}">Login</a>
@@ -589,10 +567,6 @@ Primary style
 
 
 <script type="text/javascript">
-
-
-
-
 
 
 	$("#btnEnviarMail").click(function () {

@@ -45,6 +45,8 @@
                     <g:sortableColumn property="orden" title="Orden" />
                     
                     <g:sortableColumn property="estado" title="Estado" />
+
+                    <th>Imagen</th>
                     
                     %{--<g:sortableColumn property="imagen" title="Imagen" />--}%
                     
@@ -63,6 +65,8 @@
                         <td>${fieldValue(bean: seccionInstance, field: "orden")}</td>
 
                         <td>${seccionInstance?.estado == 'A' ? 'Activo' : 'No Activo' }</td>
+
+                        <td>${seccionInstance?.imagen}</td>
                         
                         %{--<td>${fieldValue(bean: seccionInstance, field: "estado")}</td>--}%
                         

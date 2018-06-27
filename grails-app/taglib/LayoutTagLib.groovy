@@ -52,7 +52,6 @@ class LayoutTagLib {
                         html += "<h4 class='service-heading'>${it?.titulo}</h4>"
                         html += "<p class='text-muted'>${it?.descripcion}</p>"
                         html += '</div>'
-
                     }
 //                    html += '</div>'
                     break;
@@ -93,7 +92,6 @@ class LayoutTagLib {
                             html += "<p class='text-muted'>${it.subtitulo}</p>"
                             html += '</div>'
                             html += '</div>'
-
                         }
                     }
 

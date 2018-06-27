@@ -70,13 +70,13 @@
         <a href="#" id="btnGuardar" class="btn btn-sm btn-success sobrepuesto" title="Guardar información">
             <i class="fa fa-save"></i> Guardar
         </a>
-        <a href="${createLink(controller: 'articulo', action: 'list')}" id="btnConsultarr"
-           class="btn btn-sm btn-primary sobrepuesto" style="margin-left: 90px" title="Consultar artículo">
-            <i class="fa fa-check"></i> Lista
-        </a>
+        %{--<a href="${createLink(controller: 'articulo', action: 'list')}" id="btnConsultarr"--}%
+           %{--class="btn btn-sm btn-primary sobrepuesto" style="margin-left: 90px" title="Consultar artículo">--}%
+            %{--<i class="fa fa-check"></i> Lista--}%
+        %{--</a>--}%
         <a href="#" id="btnArticulo" class="btn btn-sm btn-primary sobrepuesto"
            style="margin-left: 160px" title="Crear nuevo registro">
-            <i class="fa fa-check"></i> Crear Nuevo
+            <i class="fa fa-book"></i> Crear Nuevo
         </a>
         <a href="#" id="btnVer" class="btn btn-sm btn-primary sobrepuesto" style="margin-left: 281px"
            title="Ver registro">
