@@ -38,7 +38,8 @@
 
 	<!-- Theme CSS -->
 	%{--<link href="css/agency.min.css" rel="stylesheet">--}%
-	<link href='${resource(dir: 'agency-theme', file: 'css/agency.min.css')}' rel='stylesheet'>
+	%{--<link href='${resource(dir: 'agency-theme', file: 'css/agency.min.css')}' rel='stylesheet'>--}%
+	<link href='${resource(dir: 'agency-theme', file: 'css/agency.css')}' rel='stylesheet'>
 
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -98,13 +99,15 @@
 	}
 
 	.cd-fixed-bg.cd-bg-1 {
-		background-image: url("../agency-theme/img/portada.jpeg");
+		/*background-image: url("../agency-theme/img/portada.jpeg");*/
+		background-image: url("../agency-theme/img/imagen_fondo_v2.jpg");
 	}
 	.cd-fixed-bg.cd-bg-2 {
 		background-image: url("../agency-theme/img/portada2.jpeg");
 	}
 	.cd-fixed-bg.cd-bg-3 {
-		background-image: url("../agency-theme/img/portada3.jpeg");
+		/*background-image: url("../agency-theme/img/portada3.jpeg");*/
+		background-image: url("../agency-theme/img/imagen_fondo_v2.jpg");
 	}
 	/*.cd-fixed-bg.cd-bg-4 {*/
 	/*background-image: url("../img/cd-background-4.jpg");*/
@@ -117,15 +120,6 @@
 	.cd-color-2{
 		background-color: #006dba !important;
 	}
-
-
-	%{--.fondo{--}%
-	%{--/*background-image: url("https://mdn.mozillademos.org/files/12057/starsolid.gif");*/--}%
-	%{--background-image: url("${resource(dir: 'images', file: 'starsolid.gif')}");--}%
-	%{--/*background-color: #006dba;*/--}%
-	%{--background-attachment: fixed;--}%
-	%{--}--}%
-
 
 
 	/* --------------------------------
@@ -447,8 +441,10 @@ Primary style
 <header>
 	<div class="container">
 		<div class="intro-text">
-			<div class="intro-lead-in" style="color: #ff8123">${sitio?.descripcion}</div>
-			<div class="intro-heading" style="color: #ff8123">${sitio?.nombre}</div>
+			%{--<div class="intro-lead-in" style="color: #ff8123">${sitio?.descripcion}</div>--}%
+			<div class="intro-lead-in" style="color: #89d1f5">${sitio?.descripcion}</div>
+			%{--<div class="intro-heading" style="color: #ff8123">${sitio?.nombre}</div>--}%
+			<div class="intro-heading" style="color: #89d1f5">${sitio?.nombre}</div>
 			<a href="#${secciones.first()?.id}" class="page-scroll btn btn-xl">Más Información</a>
 		</div>
 	</div>
@@ -502,7 +498,6 @@ Primary style
 						</div>
 					</div>
 				</div>
-				%{--<div class="clearfix"></div>--}%
 				<div class="col-lg-12 text-center">
 					<h3 class="section-subheading text-muted" style="color: #ffffff">
 						Ingrese sus datos personales. <br>Para poder responderle lo más pronto posible, por favor ingrese un correo electrónico o un teléfono válido.
