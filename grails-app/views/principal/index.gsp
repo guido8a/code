@@ -109,9 +109,6 @@
 		/*background-image: url("../agency-theme/img/portada3.jpeg");*/
 		background-image: url("../agency-theme/img/imagen_fondo_v2.jpg");
 	}
-	/*.cd-fixed-bg.cd-bg-4 {*/
-	/*background-image: url("../img/cd-background-4.jpg");*/
-	/*}*/
 
 	.cd-scrolling-bg {
 		min-height: 100% !important;
@@ -393,7 +390,7 @@ Primary style
 	}
 
 	a:hover {
-		color: #772800;
+		color: #89d1f5;
 	}
 
 	</style>
