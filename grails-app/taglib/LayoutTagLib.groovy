@@ -9,7 +9,7 @@ class LayoutTagLib {
 
     def plantilla = { attrs ->
 
-//        println("attrs " + attrs)
+        println "plantilla: attrs: $attrs"
 
         def seccion = Seccion.get(attrs.seccion)
         def articulos
@@ -23,10 +23,11 @@ class LayoutTagLib {
                     html +=     '<div class="row">'
                     html +=     '<div class="col-lg-12">'
                     html +=     '<div class="row">'
-                    html +=     '<div class="col-md-3">'
-                    html +=     "<img src='${resource(dir: 'images', file: articulos?.imagen)}' style='height: 150px'>"
+                    html +=     '<div class="col-md-4">'
+//                    html +=     "<img src='${resource(dir: 'images', file: articulos?.imagen)}' style='height: 150px'>"
+                    html +=     "<img src='${resource(dir: 'images', file: articulos?.imagen)}' style='width: 100%'>"
                     html +=     '</div>'
-                    html +=     '<div class="col-md-9">'
+                    html +=     '<div class="col-md-8">'
                     html +=     '<div class="form-group">'
                     if(articulos?.texto){
                         html +=      "<p class='' style='text-align: justify'>${articulos?.texto}</p>"
