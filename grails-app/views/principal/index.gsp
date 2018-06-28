@@ -41,6 +41,15 @@
 	%{--<link href='${resource(dir: 'agency-theme', file: 'css/agency.min.css')}' rel='stylesheet'>--}%
 	<link href='${resource(dir: 'agency-theme', file: 'css/agency.css')}' rel='stylesheet'>
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121607475-1"></script>
+	<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-121607475-1');
+	</script>
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
