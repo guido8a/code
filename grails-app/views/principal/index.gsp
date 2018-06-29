@@ -366,7 +366,7 @@ Primary style
 		/*min-height: 100%;*/
 		padding: 4em 0;
 		line-height: 1.6;
-		box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 		z-index: 2;
 	}
 	.cd-scrolling-bg.cd-color-1 {
