@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121607475-1"></script>
 	<script>
         window.dataLayer = window.dataLayer || [];
@@ -12,6 +10,7 @@
 
         gtag('config', 'UA-121607475-1');
 	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -561,6 +560,9 @@ Primary style
 					<li><a href="${createLink(controller: 'login', action: 'login')}">Login</a>
 					</li>
 				</ul>
+			</div>
+			<div class="col-md-4">
+				<span class="copyright">Versión ${message(code: 'version', default: '1.1.0x')}</span>
 			</div>
 		</div>
 	</div>
