@@ -16,7 +16,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="col-lg-10 col-lg-offset-1">
                         <div class="modal-body" style="text-align: justify">
                             <h2 style="text-align: center!important;">${art?.titulo}</h2>
                             <p class="item-intro text-muted" style="text-align: center">${art?.subtitulo}</p>

@@ -121,7 +121,7 @@
 	}
 
 	.cd-scrolling-bg {
-		min-height: 100% !important;
+		/*min-height: 100% !important;*/
 	}
 
 	.cd-color-2{
@@ -363,7 +363,7 @@ Primary style
 
 	.cd-scrolling-bg {
 		position: relative;
-		min-height: 100%;
+		/*min-height: 100%;*/
 		padding: 4em 0;
 		line-height: 1.6;
 		box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
