@@ -99,7 +99,6 @@
             </div>
 
             <div class="row">
-
                 <div class="grupo col-md-8">
                     <span class="col-md-3 label label-primary text-info mediano">Título</span>
 
@@ -117,20 +116,29 @@
                                      value="${artc?.orden}"/>
                     </div>
                 </div>
-
             </div>
 
             <div class="row">
-                <div class="col-md-12">
-                    <span class="col-md-2 label label-primary text-info mediano">Subtítulo</span>
+                <div class="col-md-8">
+                    <span class="col-md-3 label label-primary text-info mediano">Subtítulo</span>
 
-                    <div class="col-md-10">
+                    <div class="col-md-9">
                         <span class="grupo">
                             <g:textArea name="subtitulo" id="subtitulo" class="form-control required" maxlength="255"
                                         style="height: 40px; resize: none" value="${artc?.subtitulo}"/>
                         </span>
                     </div>
                 </div>
+
+
+                <div class="col-md-4">
+                    <span class="col-md-3 label label-primary text-info mediano">Estado</span>
+
+                    <div class="col-md-6">
+                        <g:select from="${['P':'Provisional', 'A':'Aprobado']}" optionValue="value" optionKey="key" class="form-control" name="estado" value="${artc?.estado}"/>
+                    </div>
+                </div>
+
             </div>
 
             <div class="row">
@@ -235,7 +243,6 @@
         var txto = CKEDITOR.instances.texto.getData();
         var base_id = '${artc?.id}';
         if ($form.valid()) {
-            console.log('validadddd');
             $.ajax({
                 type: 'POST',
                 url: "${createLink(action: 'guardarArtc_ajax')}",
@@ -249,10 +256,11 @@
                     descripcion: $("#descripcion").val(),
                     texto: txto,
                     imagen: $("#imagen").val(),
-                    metaDescripcion: $("#metaDescripcion").val()
+                    metaDescripcion: $("#metaDescripcion").val(),
+                    estado : $("#estado").val()
                 },
                 success: function (msg) {
-                    console.log('retorna:', msg);
+//                    console.log('retorna:', msg);
                     var parte = msg.split("_");
                     if (parte[0] == 'ok') {
                         log("Problema guardado correctamente", "success")
@@ -296,15 +304,15 @@
                     }
                 }
             },
-            estado: {
-                remote: {
-                    url: "${createLink(action: 'validarEstado_ajax')}",
-                    type: "post",
-                    data: {
-                        estado: $("#estado").val()
-                    }
-                }
-            },
+            %{--estado: {--}%
+                %{--remote: {--}%
+                    %{--url: "${createLink(action: 'validarEstado_ajax')}",--}%
+                    %{--type: "post",--}%
+                    %{--data: {--}%
+                        %{--estado: $("#estado").val()--}%
+                    %{--}--}%
+                %{--}--}%
+            %{--},--}%
             meta: {
                 remote: {
                     url: "${createLink(action: 'validarMeta_ajax')}",
@@ -319,9 +327,9 @@
             titulo: {
                 remote: "El número mínimo de caracteres debe ser de 3"
             },
-            estado: {
-                remote: "El número mínimo de caracteres debe ser de 3"
-            },
+//            estado: {
+//                remote: "El número mínimo de caracteres debe ser de 3"
+//            },
             meta: {
                 remote: "El campo meta esta vacío"
             }

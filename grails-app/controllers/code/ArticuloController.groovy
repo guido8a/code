@@ -164,8 +164,9 @@ class ArticuloController extends code.Shield {
     }
 
     def guardarArtc_ajax () {
-        println "guardarArtc params.seccion: ${params.seccion}, id: ${params.id}, dscr: ${params.descripcion}"
-        println "session: $session"
+//        println("---------- " + params)
+//        println "guardarArtc params.seccion: ${params.seccion}, id: ${params.id}, dscr: ${params.descripcion}"
+//        println "session: $session"
 
         def articuloInstance
         def seccion = Seccion.get(params.seccion)
@@ -177,17 +178,17 @@ class ArticuloController extends code.Shield {
             articuloInstance.fecha = new Date()
         }
         articuloInstance.properties = params
-        articuloInstance.estado = 'A'
+//        articuloInstance.estado = 'A'
         articuloInstance.seccion = seccion
-        println "seccion: $seccion, ${articuloInstance.seccion}"
+//        println "seccion: $seccion, ${articuloInstance.seccion}"
 
         try{
-            println "...1, >>> ${articuloInstance.descripcion}"
+//            println "...1, >>> ${articuloInstance.descripcion}"
             articuloInstance.save(flush: true)
 //            articuloInstance.save()
 //            println "guardado ----- "
             articuloInstance.refresh()
-            println "....id: ${articuloInstance.id}, ${articuloInstance.seccion}"
+//            println "....id: ${articuloInstance.id}, ${articuloInstance.seccion}"
             render "ok_${articuloInstance.id}"
 
         } catch (e) {
