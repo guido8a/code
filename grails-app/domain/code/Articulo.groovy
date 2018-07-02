@@ -37,9 +37,9 @@ class Articulo {
         subtitulo(blank:false, size: 3..255)
         descripcion(blank:false, size: 3..1023)
         texto(blank:false)
-        imagen(blank:true, size: 0..255)
+        imagen(blank:true, nullable: true, size: 0..255)
         metaDescripcion(blank:false, size: 0..255)
-        estado(size:1..1, blank:false)
+        estado(size:1..1, inList: ["A", "P"])
     }
 
     String toString(){

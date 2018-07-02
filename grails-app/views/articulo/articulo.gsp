@@ -113,7 +113,7 @@
                     <span class="col-md-3 label label-primary text-info mediano">Orden</span>
 
                     <div class="col-md-4">
-                        <g:textField name="orden" id="orden" class="form-control" maxlength="255"
+                        <g:textField name="orden" id="orden" class="form-control required" maxlength="255"
                                      value="${artc?.orden}"/>
                     </div>
                 </div>

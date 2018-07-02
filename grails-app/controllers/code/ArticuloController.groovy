@@ -177,6 +177,7 @@ class ArticuloController extends code.Shield {
             articuloInstance.fecha = new Date()
         }
         articuloInstance.properties = params
+        articuloInstance.estado = 'A'
         articuloInstance.seccion = seccion
         println "seccion: $seccion, ${articuloInstance.seccion}"
 
