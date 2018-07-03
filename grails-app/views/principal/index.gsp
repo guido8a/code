@@ -408,8 +408,8 @@ Primary style
 	/*------------------*/
 
 	.client {
-		width:248px;
-		height:220px;
+		width:280px;
+		height:260px;
 		background-color:#fff;
 		text-align:center;
 		float:left;
@@ -545,7 +545,7 @@ Primary style
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2 class="">Contáctenos</h2>
+				<h2 style="color: #9fd1ff">Contáctenos</h2>
 
 				<div class="col-lg-3"></div>
 				<div class="col-lg-6 text-center">
