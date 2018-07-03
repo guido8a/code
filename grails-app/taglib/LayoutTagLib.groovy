@@ -24,7 +24,6 @@ class LayoutTagLib {
                     html +=     '<div class="col-lg-12">'
                     html +=     '<div class="row">'
                     html +=     '<div class="col-md-4">'
-//                    html +=     "<img src='${resource(dir: 'images', file: articulos?.imagen)}' style='height: 150px'>"
                     html +=     "<img src='${resource(dir: 'images', file: articulos?.imagen)}' style='width: 100%'>"
                     html +=     '</div>'
                     html +=     '<div class="col-md-8">'
@@ -43,15 +42,15 @@ class LayoutTagLib {
                 case "LN01":
                     articulos = Articulo.findAllBySeccion(seccion, [sort:'orden', order: 'asc'])
                     articulos.each {
-                        html += '<div class="col-md-4 col-sm-6">'
-                        html += '<span class="fa-stack fa-4x">'
+                        html += '<div class="col-md-4 col-sm-6" style="text-align: center">'
+                        html += '<span class="fa-stack fa-4x servicio">'
                         html += "<a href='#${it.id}' class='portfolio-link btnArt' data-toggle='modal' at_id='${it.id}'>"
                         html += '<i class="fa fa-circle fa-stack-2x text-primary"></i>'
                         html += "<i class='fa fa-${it?.imagen} fa-stack-1x fa-inverse'></i>"
                         html += '</a>'
                         html += '</span>'
                         html += "<h4 class='service-heading'>${it?.titulo}</h4>"
-                        html += "<p class='text-muted'>${it?.descripcion}</p>"
+                        html += "<p class='text-muted' id='descripcionServicio'>${it?.descripcion}</p>"
                         html += '</div>'
                     }
 //                    html += '</div>'

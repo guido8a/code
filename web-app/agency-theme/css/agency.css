@@ -9,6 +9,7 @@ body {
 }
 .text-muted {
   color: #777777;
+  text-align: justify;
 }
 .text-primary {
   color: #3f71ba;
@@ -317,11 +318,41 @@ section h3.section-subheading {
 .service-heading {
   margin: 15px 0;
   text-transform: none;
+  text-align: center;
 }
 
 .portfolio{
   max-height: 900px;
   margin-top: -100px;
+}
+
+.centrar{
+  text-align: center;
+}
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
+
+.servicio:hover {
+  animation: bounce 1s;
+}
+
+.text-muted:hover{
+  transform: scale(1.1);
 }
 
 

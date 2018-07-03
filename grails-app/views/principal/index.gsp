@@ -448,9 +448,7 @@ Primary style
 <header>
 	<div class="container">
 		<div class="intro-text">
-			%{--<div class="intro-lead-in" style="color: #ff8123">${sitio?.descripcion}</div>--}%
 			<div class="intro-lead-in" style="color: #89d1f5">${sitio?.descripcion}</div>
-			%{--<div class="intro-heading" style="color: #ff8123">${sitio?.nombre}</div>--}%
 			<div class="intro-heading" style="color: #89d1f5">${sitio?.nombre}</div>
 			<a href="#${secciones.first()?.id}" class="page-scroll btn btn-xl">Más Información</a>
 		</div>
@@ -459,9 +457,6 @@ Primary style
 
 
 <g:each in="${secciones}" var="se" status="j">
-
-	%{--<div class="cd-fixed-bg " style="background-image: url('${resource(dir: 'images', file: se?.imagen)}')"></div>--}%
-
 	<div class="cd-scrolling-bg cd-color-3">
 		<section id="${se?.id}" class="portfolio fondo" style="display: block !important;">
 			<div class="container fondo">
@@ -473,13 +468,12 @@ Primary style
 				</div>
 
 				<g:if test="${se?.imagen}">
-					<elm:plantilla  seccion="${se?.id}"/>
+					<elm:plantilla seccion="${se?.id}"/>
 				</g:if>
 			</div>
 		</section>
 	</div>
 </g:each>
-
 
 
 <!-- Contact Section -->
@@ -572,6 +566,11 @@ Primary style
 
 
 <script type="text/javascript">
+
+	$("#descripcionServicio").hover(function () {
+	   console.log("hover!!!")
+		$(".servicio").css("animation","bounce 1s")
+	});
 
 
 	$("#btnEnviarMail").click(function () {
