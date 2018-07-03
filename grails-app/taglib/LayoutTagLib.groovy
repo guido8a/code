@@ -42,15 +42,16 @@ class LayoutTagLib {
                 case "LN01":
                     articulos = Articulo.findAllBySeccion(seccion, [sort:'orden', order: 'asc'])
                     articulos.each {
-                        html += '<div class="col-md-4 col-sm-6" style="text-align: center">'
-                        html += '<span class="fa-stack fa-4x servicio">'
+                        html += '<div class="col-md-4 col-sm-6 client" style="text-align: center">'
+                        html += '<span class="fa-stack fa-4x servicio logo">'
                         html += "<a href='#${it.id}' class='portfolio-link btnArt' data-toggle='modal' at_id='${it.id}'>"
                         html += '<i class="fa fa-circle fa-stack-2x text-primary"></i>'
                         html += "<i class='fa fa-${it?.imagen} fa-stack-1x fa-inverse'></i>"
                         html += '</a>'
                         html += '</span>'
                         html += "<h4 class='service-heading'>${it?.titulo}</h4>"
-                        html += "<p class='text-muted' id='descripcionServicio'>${it?.descripcion}</p>"
+//                        html += "<p class='text-muted' id='descripcionServicio'>${it?.descripcion}</p>"
+                        html += "<p class='text-muted' id='descripcionServicio' style='font-size: 10px; font-weight: bold;'>${it?.subtitulo}</p>"
                         html += '</div>'
                     }
 //                    html += '</div>'

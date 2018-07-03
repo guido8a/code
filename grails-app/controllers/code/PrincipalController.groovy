@@ -8,7 +8,7 @@ class PrincipalController {
         def sitio = Sitio.get(1)
         def secciones = Seccion.findAllBySitio(sitio, [sort: 'orden', order: 'asc'])
 
-        println("secciones " + secciones)
+//        println("secciones " + secciones)
 
         def quanto = Articulo.findAllBySeccion(Seccion.get(3))
 
@@ -41,9 +41,6 @@ class PrincipalController {
     }
 
     def dialogos_ajax () {
-
-        println("params " + params)
-
         def articulo = Articulo.get(params.id)
         return [art: articulo]
 

@@ -403,7 +403,71 @@ Primary style
 		color: #89d1f5;
 	}
 
-	</style>
+
+
+	/*------------------*/
+
+	.client {
+		width:248px;
+		height:220px;
+		background-color:#fff;
+		text-align:center;
+		float:left;
+		font-family: 'Open Sans', sans-serif;
+		letter-spacing:1px;
+		-webkit-transition: all 0.1s;
+		-moz-transition: all 0.1s;
+		transition: all 0.1s;
+		border-right:1px solid #f0f0f0;
+		border-bottom:1px solid #f0f0f0;
+		/*cursor:pointer;*/
+	}
+
+	.logo {
+		display:block;
+		width:75px;
+		height:75px;
+		/*-webkit-border-radius: 50%;*/
+		/*-moz-border-radius: 50%;*/
+		/*border-radius: 50%;*/
+		/*border:5px solid #eee;*/
+		margin-bottom:30px;
+		/*background-color:#eee;*/
+		margin:35px auto;
+	}
+
+	.client h2, .client h3 {
+		font-size:16px;
+		color:#888;
+		padding:0px;
+		margin:0px;
+	}
+
+	.client h3 {
+		font-weight:100;
+		margin-top:0px;
+	}
+
+	.clearer {
+		clear:both;
+	}
+
+	.client:hover {
+		-ms-transform: scale(1.1,1.1); /* IE 9 */
+		-webkit-transform: scale(1.1,1.1); /* Safari */
+		transform: scale(1.1,1.1);
+		/*-webkit-box-shadow: 10px 10px 91px 0px rgba(193,79,82,1);*/
+		-webkit-box-shadow: 10px 10px 91px 0px rgb(63, 113, 186);
+		-moz-box-shadow: 10px 10px 91px 0px rgb(63, 113, 186);
+		box-shadow: 10px 10px 91px 0px rgb(63, 113, 186);
+		z-index:9999;
+		border-right:1px solid transparent;
+		border-bottom:1px solid transparent;
+		/*cursor:pointer;*/
+		background-color:#fff;
+	}
+
+</style>
 
 </head>
 
