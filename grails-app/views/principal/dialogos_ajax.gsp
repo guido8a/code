@@ -5,9 +5,10 @@
   Time: 11:31 AM
 --%>
 
-<div class="portfolio-modal modal fade in dialogo" aria-hidden="true" role="dialog" tabindex="-1" style="display: block; padding-right: 14px; overflow-y: auto; background-color: #94c3d7 !important;" id="modalArticulo">
+<div class="portfolio-modal modal fade in dialogo" aria-hidden="true" role="dialog" tabindex="-1" style="display: block; padding-right: 14px; overflow-y: auto; background-color: #f4f4f3 !important;" id="modalArticulo">
     <div class="modal-dialog">
-        <div class="modal-content" style="background-color: #94c3d7 !important;">
+        %{--<div class="modal-content" style="background-color: #94c3d7 !important;">--}%
+        <div class="modal-content" style="background-color: #fffffb !important;">
             <div class="close-modal" data-dismiss="modal" id="cerrarModal">
                 <div class="lr">
                     <div class="rl">
