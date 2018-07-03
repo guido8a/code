@@ -567,11 +567,6 @@ Primary style
 
 <script type="text/javascript">
 
-	$("#descripcionServicio").hover(function () {
-	   console.log("hover!!!")
-		$(".servicio").css("animation","bounce 1s")
-	});
-
 
 	$("#btnEnviarMail").click(function () {
 

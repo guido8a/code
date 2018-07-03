@@ -355,6 +355,10 @@ section h3.section-subheading {
   transform: scale(1.1);
 }
 
+.color-texto{
+  color: #3f71ba;
+}
+
 
 #portfolio .portfolio-item {
   margin: 0 0 15px;
