@@ -67,7 +67,7 @@ class ArticuloController extends code.Shield {
 //        println("params lista"  + params)
 
         def seccion = Seccion.get(params.id)
-        def articuloInstanceList = Articulo.findAllBySeccion(seccion)
+        def articuloInstanceList = Articulo.findAllBySeccion(seccion, [sort: 'orden'])
         def articuloInstanceCount = articuloInstanceList.size()
 //        def articuloInstanceList = getList(params, false)
 //        def articuloInstanceCount = getList(params, true).size()
