@@ -552,11 +552,11 @@ Primary style
 					<div class="panel-group well">
 						<div class="row" style="height: 80px">
 							<label>Dirección:</label>
-							<h3 class="section-subheading text-muted">Rio Coca y Avenida de los Shyris E8 - 138  Quito - Ecuador.</h3>
+							<h3 class="section-subheading text-muted">Rio Coca y Avenida de los Shyris E8 - 138 Oficina 201. Quito - Ecuador.</h3>
 						</div>
 						<div class="row" style="height: 80px">
 							<label>Teléfonos:</label>
-							<h3 class="section-subheading text-muted">022 924 427 - 084 916 620.</h3>
+							022 924 427 - 098 491 6620
 						</div>
 						<div class="row" style="height: 80px">
 							<label>E-mail:</label><h3 class="section-subheading text-muted">soporte@tedein.com.ec, informacion@tedein.com.ec </h3>
