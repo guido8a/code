@@ -9,7 +9,7 @@ class LayoutTagLib {
 
     def plantilla = { attrs ->
 
-        println "plantilla: attrs: $attrs"
+//        println "plantilla: attrs: $attrs"
 
         def seccion = Seccion.get(attrs.seccion)
         def articulos
@@ -51,7 +51,8 @@ class LayoutTagLib {
                         html += '</span>'
                         html += "<h4 class='service-heading'>${it?.titulo}</h4>"
 //                        html += "<p class='text-muted' id='descripcionServicio'>${it?.descripcion}</p>"
-                        html += "<p class='text-muted' id='descripcionServicio' style='font-size: 10px; font-weight: bold;'>${it?.subtitulo}</p>"
+                        html += "<p class='text-muted' id='descripcionServicio' " +
+                                "style='font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px !important;'>${it?.subtitulo}</p>"
                         html += '</div>'
                     }
 //                    html += '</div>'

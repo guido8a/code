@@ -467,6 +467,15 @@ Primary style
 		background-color:#fff;
 	}
 
+	.italica {
+		font-size: 16px;
+		font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: none;
+		font-style: italic;
+		font-weight: 400;
+		color: #606060;
+	}
+
 </style>
 
 </head>
@@ -512,6 +521,7 @@ Primary style
 <header>
 	<div class="container">
 		<div class="intro-text">
+			<div class="intro-lead-in" style="text-align: center; margin-top: -100px"><img src="${resource(dir: 'images', file: 'tedein.jpeg')}"></div>
 			<div class="intro-lead-in" style="color: #89d1f5">${sitio?.descripcion}</div>
 			<div class="intro-heading" style="color: #89d1f5">${sitio?.nombre}</div>
 			<a href="#${secciones.first()?.id}" class="page-scroll btn btn-xl">Más Información</a>
@@ -552,14 +562,16 @@ Primary style
 					<div class="panel-group well">
 						<div class="row" style="height: 80px">
 							<label>Dirección:</label>
-							<h3 class="section-subheading text-muted">Rio Coca y Avenida de los Shyris E8 - 138 Oficina 201. Quito - Ecuador.</h3>
+							<div class="italica">Rio Coca y Avenida de los Shyris E8 - 138. Oficina 201</div>
+							<div class="italica">Quito - Ecuador.</div>
 						</div>
-						<div class="row" style="height: 80px">
+						<div class="row" style="height: 60px">
 							<label>Teléfonos:</label>
-							022 924 427 - 098 491 6620
+							<div class="italica">022 924 427 - 098 491 6620</div>
 						</div>
-						<div class="row" style="height: 80px">
-							<label>E-mail:</label><h3 class="section-subheading text-muted">soporte@tedein.com.ec, informacion@tedein.com.ec </h3>
+						<div class="row" style="height: 40px">
+							<label>E-mail:</label>
+							<div class="italica">soporte@tedein.com.ec, informacion@tedein.com.ec </div>
 						</div>
 					</div>
 				</div>
@@ -568,13 +580,13 @@ Primary style
 						Ingrese sus datos personales. <br>Para poder responderle lo más pronto posible, por favor ingrese un correo electrónico o un teléfono válido.
 					</h3>
 				</div>
-
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="col-lg-12">
 				<form name="sentMessage" id="contactForm" novalidate>
-					<div class="row">
+					<div class="row" style="margin-top: -40px">
 						<div class="col-md-6">
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="Nombre y apellido *" id="name" required data-validation-required-message="Ingrese su nombre y apellido.">
