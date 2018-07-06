@@ -20,6 +20,8 @@ class PrincipalController {
 
 //        println("params enviar mail " + params)
         def mailTedein = "informacion@tedein.com.ec"
+        def mailTedein2 = "guido8a@gmail.com"
+        def errores = ''
 
 
         try{
@@ -32,11 +34,37 @@ class PrincipalController {
                         "\n Email: ${params.correo} " +
                         "\n Mensaje: ${params.mensaje}"
             }
-            render "ok"
+//            render "ok"
         }catch (e){
-            render "no"
+//            render "no"
              println("Error al enviar el mail")
+            errores += e
         }
+
+        try{
+            mailService.sendMail {
+                to mailTedein2
+                subject "Nuevo correo desde la página web de TEDEIN"
+                body "Pregunta o información: " +
+                        "\n Nombre: ${params.nombre} " +
+                        "\n Teléfono: ${params.telefono} " +
+                        "\n Email: ${params.correo} " +
+                        "\n Mensaje: ${params.mensaje}"
+            }
+//            render "ok"
+        }catch (e){
+//            render "no"
+            println("Error al enviar el mail 2")
+            errores += e
+        }
+
+        if(errores == ''){
+            render "ok"
+        }else{
+            render "no"
+        }
+
+
 
     }
 
