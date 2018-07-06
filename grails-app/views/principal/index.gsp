@@ -665,7 +665,7 @@ Primary style
 				},
 				success: function (msg) {
 					if(msg == 'ok'){
-						alert("Mail enviado correctamente")
+						alert("Su mensaje ha sido enviado correctamente, pronto estaremos comunicándonos con usted.")
 					}
 
 				}
