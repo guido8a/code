@@ -61,7 +61,8 @@ class LayoutTagLib {
                     articulos = Articulo.findAllBySeccion(seccion, [sort:'orden', order: 'asc'])
                     if(articulos.size() > 1){
                         articulos.each {
-                            html += "<div class='col-md-4 col-sm-6 portfolio-item' style='height: 300px'>"
+//                            html += "<div class='col-md-4 col-sm-6 portfolio-item' style='height: 340px; width: 280px'>"
+                            html += "<div class='col-md-3 col-sm-2 portfolio-item'>"
                             html += "<a href='#${it.id}' class='portfolio-link btnArt' data-toggle='modal' at_id='${it.id}'>"
                             html += '<div class="portfolio-hover">'
                             html += '<div class="portfolio-hover-content">'
@@ -101,7 +102,7 @@ class LayoutTagLib {
                 case "MX01":
                     articulos = Articulo.findAllBySeccion(seccion)
                     articulos.each {
-                        html += '<div class="col-lg-12">'
+                        html += '<div class="col-md-12 col-sm-6">'
                         html += '<ul class="timeline">'
                         html += '<li>'
                         html += '<div class="timeline-image">'
