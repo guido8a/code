@@ -34,9 +34,7 @@ class PrincipalController {
                         "\n Email: ${params.correo} " +
                         "\n Mensaje: ${params.mensaje}"
             }
-//            render "ok"
         }catch (e){
-//            render "no"
              println("Error al enviar el mail")
             errores += e
         }
@@ -51,9 +49,7 @@ class PrincipalController {
                         "\n Email: ${params.correo} " +
                         "\n Mensaje: ${params.mensaje}"
             }
-//            render "ok"
         }catch (e){
-//            render "no"
             println("Error al enviar el mail 2")
             errores += e
         }

@@ -26,6 +26,8 @@
 	<script src="${resource(dir: 'agency-theme/vendor/jquery', file: 'jquery.js')}"></script>
 	<script src="${resource(dir: 'js/bootbox-4.3.0', file: 'js/bootbox.js')}"></script>
 
+	<script src="${resource(dir: 'js', file: 'loader.js')}"></script>
+
 	<title>TEDEIN S.A.</title>
 
 	<link href='${resource(dir: 'js/datedropper3', file: 'datedropper.js')}' rel='stylesheet'>
@@ -643,6 +645,9 @@ Primary style
 
 <script type="text/javascript">
 
+    var url = "${resource(dir:'images', file:'spinner-gif-17.gif')}";
+    var spinner = $("<img style='margin-left:15px; height: 7%; width: 7%' src='" + url + "' alt='Enviando...'/>");
+
 
 	$("#btnEnviarMail").click(function () {
 
@@ -651,8 +656,14 @@ Primary style
 		var correo = $("#email").val();
 		var mensaje = $("#message").val();
 
+        var btn = $(this);
+        var $btn = btn.clone(true);
+
 
 		if(nombre != '' && telefono != '' && correo != '' && mensaje != ''){
+
+           btn.replaceWith(spinner);
+
 			$.ajax({
 				type: 'POST',
 				url: "${createLink(controller: 'principal', action: 'enviarMail_ajax')}",
@@ -664,8 +675,12 @@ Primary style
 
 				},
 				success: function (msg) {
+                    spinner.replaceWith($btn);
+
 					if(msg == 'ok'){
 						alert("Su mensaje ha sido enviado correctamente, pronto estaremos comunicándonos con usted.")
+					}else{
+                        alert("Ha ocurrido un error al enviar su mensaje, porfavor intente otra vez.")
 					}
 
 				}
