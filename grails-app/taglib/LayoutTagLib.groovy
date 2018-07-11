@@ -21,12 +21,12 @@ class LayoutTagLib {
                 case "PA01":
                     articulos = Articulo.findBySeccion(seccion, [sort:'orden', order: 'asc'])
                     html +=     '<div class="row">'
-                    html +=     '<div class="col-lg-12">'
+                    html +=     '<div class="col-md-12 col-sm-12">'
                     html +=     '<div class="row">'
-                    html +=     '<div class="col-md-4">'
+                    html +=     '<div class="col-md-4 col-sm-4">'
                     html +=     "<img src='${resource(dir: 'images', file: articulos?.imagen)}' style='width: 100%'>"
                     html +=     '</div>'
-                    html +=     '<div class="col-md-8">'
+                    html +=     '<div class="col-md-8 col-sm-8">'
                     html +=     '<div class="form-group">'
                     if(articulos?.texto){
                         html +=      "<p class='' style='text-align: justify'>${articulos?.texto}</p>"

@@ -182,13 +182,14 @@ Primary style
 		clear: both;
 	}
 
+
 	/* --------------------------------
 
     Main components
 
     -------------------------------- */
 	.cd-header {
-		position: fixed;
+		position: relative;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -325,27 +326,27 @@ Primary style
 		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 		color: white;
 	}
-	.cd-fixed-bg.cd-bg-1 {
-		/*background-image: url("");*/
-		background-image: url("${resource(dir: 'images', file: 'tedein1.jpg')}");
-	}
-	.cd-fixed-bg.cd-bg-2 {
-		/*background-image: url("../img/cd-background-2.jpg");*/
-		background-image: url("${resource(dir: 'images', file: 'tedein2.jpg')}");
-	}
-	.cd-fixed-bg.cd-bg-3 {
-		/*background-image: url("../img/cd-background-3.jpg");*/
-		background-image: url("${resource(dir: 'images', file: 'tedein3.jpg')}");
-	}
-	.cd-fixed-bg.cd-bg-4 {
-		/*background-image: url("../img/cd-background-4.jpg");*/
-		background-image: url("${resource(dir: 'images', file: 'tedein4.jpg')}");
-	}
+	%{--.cd-fixed-bg.cd-bg-1 {--}%
+		%{--/*background-image: url("");*/--}%
+		%{--background-image: url("${resource(dir: 'images', file: 'tedein1.jpg')}");--}%
+	%{--}--}%
+	%{--.cd-fixed-bg.cd-bg-2 {--}%
+		%{--/*background-image: url("../img/cd-background-2.jpg");*/--}%
+		%{--background-image: url("${resource(dir: 'images', file: 'tedein2.jpg')}");--}%
+	%{--}--}%
+	%{--.cd-fixed-bg.cd-bg-3 {--}%
+		%{--/*background-image: url("../img/cd-background-3.jpg");*/--}%
+		%{--background-image: url("${resource(dir: 'images', file: 'tedein3.jpg')}");--}%
+	%{--}--}%
+	%{--.cd-fixed-bg.cd-bg-4 {--}%
+		%{--/*background-image: url("../img/cd-background-4.jpg");*/--}%
+		%{--background-image: url("${resource(dir: 'images', file: 'tedein4.jpg')}");--}%
+	%{--}--}%
 
-	.cd-fixed-bg.cd-bg-5 {
-		/*background-image: url("../img/cd-background-4.jpg");*/
-		background-image: url("${resource(dir: 'images', file: 'tedein5.jpg')}");
-	}
+	%{--.cd-fixed-bg.cd-bg-5 {--}%
+		%{--/*background-image: url("../img/cd-background-4.jpg");*/--}%
+		%{--background-image: url("${resource(dir: 'images', file: 'tedein5.jpg')}");--}%
+	%{--}--}%
 
 
 	@media only screen and (min-width: 768px) {
@@ -364,8 +365,8 @@ Primary style
 	}
 
 	.cd-scrolling-bg {
-		position: relative;
-		/*min-height: 100%;*/
+		/*position: relative;*/
+		/*height: 100%;*/
 		padding: 4em 0;
 		line-height: 1.6;
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -383,8 +384,9 @@ Primary style
 		background-color: #fffff9;
 		color: #3d3536;
 	}
-	@media only screen and (min-width: 768px) {
+	@media only screen and (min-width: 368px) {
 		.cd-scrolling-bg {
+			position: relative;
 			padding: 8em 0;
 			font-size: 20px;
 			font-size: 1.25rem;
@@ -404,8 +406,6 @@ Primary style
 	a:hover {
 		color: #89d1f5;
 	}
-
-
 
 	/*------------------*/
 
@@ -556,7 +556,7 @@ Primary style
 <section id="contact">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 text-center">
+			<div class="col-md-12 text-center">
 				<h2 style="color: #9fd1ff">Contáctenos</h2>
 
 				<div class="col-lg-3"></div>
