@@ -326,28 +326,6 @@ Primary style
 		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 		color: white;
 	}
-	%{--.cd-fixed-bg.cd-bg-1 {--}%
-		%{--/*background-image: url("");*/--}%
-		%{--background-image: url("${resource(dir: 'images', file: 'tedein1.jpg')}");--}%
-	%{--}--}%
-	%{--.cd-fixed-bg.cd-bg-2 {--}%
-		%{--/*background-image: url("../img/cd-background-2.jpg");*/--}%
-		%{--background-image: url("${resource(dir: 'images', file: 'tedein2.jpg')}");--}%
-	%{--}--}%
-	%{--.cd-fixed-bg.cd-bg-3 {--}%
-		%{--/*background-image: url("../img/cd-background-3.jpg");*/--}%
-		%{--background-image: url("${resource(dir: 'images', file: 'tedein3.jpg')}");--}%
-	%{--}--}%
-	%{--.cd-fixed-bg.cd-bg-4 {--}%
-		%{--/*background-image: url("../img/cd-background-4.jpg");*/--}%
-		%{--background-image: url("${resource(dir: 'images', file: 'tedein4.jpg')}");--}%
-	%{--}--}%
-
-	%{--.cd-fixed-bg.cd-bg-5 {--}%
-		%{--/*background-image: url("../img/cd-background-4.jpg");*/--}%
-		%{--background-image: url("${resource(dir: 'images', file: 'tedein5.jpg')}");--}%
-	%{--}--}%
-
 
 	@media only screen and (min-width: 768px) {
 		.cd-fixed-bg h1, .cd-fixed-bg h2 {
@@ -365,8 +343,6 @@ Primary style
 	}
 
 	.cd-scrolling-bg {
-		/*position: relative;*/
-		/*height: 100%;*/
 		padding: 4em 0;
 		line-height: 1.6;
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -429,12 +405,7 @@ Primary style
 		display:block;
 		width:75px;
 		height:75px;
-		/*-webkit-border-radius: 50%;*/
-		/*-moz-border-radius: 50%;*/
-		/*border-radius: 50%;*/
-		/*border:5px solid #eee;*/
 		margin-bottom:30px;
-		/*background-color:#eee;*/
 		margin:35px auto;
 	}
 
@@ -458,7 +429,6 @@ Primary style
 		-ms-transform: scale(1.1,1.1); /* IE 9 */
 		-webkit-transform: scale(1.1,1.1); /* Safari */
 		transform: scale(1.1,1.1);
-		/*-webkit-box-shadow: 10px 10px 91px 0px rgba(193,79,82,1);*/
 		-webkit-box-shadow: 10px 10px 91px 0px rgb(63, 113, 186);
 		-moz-box-shadow: 10px 10px 91px 0px rgb(63, 113, 186);
 		box-shadow: 10px 10px 91px 0px rgb(63, 113, 186);
@@ -523,7 +493,7 @@ Primary style
 <header>
 	<div class="container">
 		<div class="intro-text">
-			<div class="intro-lead-in" style="text-align: center; margin-top: -100px"><img src="${resource(dir: 'images', file: 'tedein.jpeg')}"></div>
+			<div class="intro-lead-in" style="text-align: center;"><img src="${resource(dir: 'images', file: 'tedein.jpeg')}"></div>
 			<div class="intro-lead-in" style="color: #89d1f5">${sitio?.descripcion}</div>
 			<div class="intro-heading" style="color: #89d1f5">${sitio?.nombre}</div>
 			<a href="#${secciones.first()?.id}" class="page-scroll btn btn-xl">Más Información</a>
