@@ -24,7 +24,7 @@
                             %{--<img class="img-responsive img-centered" src="img/portfolio/roundicons-free.png" alt="">--}%
                             <p>${art?.descripcion}</p>
                             <p style="text-align: justify">  <util:renderHTML html="${art?.texto}"/></p>
-                            <button type="button" class="btn btn-primary"  data-dismiss="modal" id="btnCerrar"><i class="fa fa-times"></i> Cerrar</button>
+                            <button type="button" class="btn btn-primary"  data-dismiss="modal" id="btnCerrar"><i class="fa fa-arrow-left"></i> Regresar</button>
                         </div>
                     </div>
                 </div>

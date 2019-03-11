@@ -504,8 +504,10 @@ Primary style
 <header>
 	<div class="container">
 		<div class="intro-text">
+%{--
 			<a href="http://www.tedein.com.ec/quanto" class="btn btn-lg"
 			   style="margin-bottom: 50px; border-color: #ffffff; color: #ffffff">Prueba Piloto de FIMCBOR</a>
+--}%
 			<div class="intro-lead-in" style="text-align: center;"><img src="${resource(dir: 'images', file: 'tedein.jpeg')}"></div>
 			<div class="intro-lead-in" style="color: #89d1f5">${sitio?.descripcion}</div>
 			<div class="intro-heading" style="color: #89d1f5">${sitio?.nombre}</div>
