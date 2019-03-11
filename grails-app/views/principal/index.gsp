@@ -16,8 +16,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Desarrollo de software. Sistemas de manejo de obras. Sistemas contables. Sistemas manejo documentos. Sistema evaluacion academica">
-	<meta name="keywords" content="desarrollo software, gestion obras, manejo obras, contables, evaluacion academica">
+	<meta name="description" content="Desarrollo de software. Sistemas de manejo de obras. Sistemas contables. Sistemas manejo documentos. Sistema evaluación académica. Sistema evaluacion academica">
+	<meta name="keywords" content="desarrollo software, gestion obras, construccion obras civiles, obras viales, obras de riego, construcciones, fiscalización, administracion, contrato, actas, manejo obras, contablilidad, evaluación académica">
+	<meta name="keywords" content="presupuesto, fórmula polinómica, análisis de precios unitarios, rubros, valor agregado ecuatoriano, VAE, presupuesto y subpresupuesto, reajuste de precios">
+	<meta name="keywords" content="cantidades de obra, transporte, costos indirectos, distancia al perso, distancia al volumen, anticipo, cronograma, coposición de obra, coejecución, ejecución directa">
+	<meta name="keywords" content="contrato, multas, cronograma contractual, rubros contratados, incices inec, precios">
+	<meta name="keywords" content="cronograma de ejecución, planilla, anticipo, avance de obra, liquidacion de obra, costo mas porcentaje, orden de obra, onden de cambio">
+	<meta name="keywords" content="facturas, complementario, cronograma consolidado, acta de entrega recepción provicional definitiva">
+	<meta name="keywords" content="desarrollo software, java, grails, phyton, moodle, postgresql, jquery, bootstrap">
 	<meta name="author" content="tedein">
 	<meta name="robots" content="index,nofollow">
 	<meta name="revisit-after" content="30 days">
