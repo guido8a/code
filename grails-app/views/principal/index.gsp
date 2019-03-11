@@ -14,9 +14,14 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta name="description" content="Desarrollo de software. Sistemas de manejo de obras. Sistemas contables. Sistemas manejo documentos. Sistema evaluacion academica">
+	<meta name="keywords" content="desarrollo software, gestion obras, manejo obras, contables, evaluacion academica">
+	<meta name="author" content="tedein">
+	<meta name="robots" content="index,nofollow">
+	<meta name="revisit-after" content="30 days">
+	<meta name="distribution" content="global">
 
 	<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
 	<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
