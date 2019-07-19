@@ -152,14 +152,17 @@ fieldset[disabled] .btn-xl.active {
   border-color: transparent;
 }
 .navbar-custom .navbar-brand {
-  color: #fffff9;
+  color: #ffeff9;
   /*font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;*/
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
-  color: #3f71ba;
+  /*color de Tedein*/
+  /*color: #3f71ba;*/
+  color: #ffff80;
+  /*background-color: #5774ac;*/
 }
 .navbar-custom .navbar-collapse {
   border-color: rgba(255, 255, 255, 0.02);
@@ -185,10 +188,11 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
+  /* hover de la opcion de menu */
   /*color: #3f71ba;*/
   color: #ffff00;
   outline: none;
-  background-color: #383838;
+  background-color: #606060;
 }
 .navbar-custom .navbar-nav > .active > a {
   border-radius: 0;
@@ -198,6 +202,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-custom .navbar-nav > .active > a:hover,
 .navbar-custom .navbar-nav > .active > a:focus {
   color: white;
+  /* color de la opcion señalada */
   background-color: #3f71ba;
 }
 @media (min-width: 768px) {
