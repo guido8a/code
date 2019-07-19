@@ -28,13 +28,14 @@ a.active {
   outline: none;
 }
 a {
-  color: #3f71ba;
+  color: #ffffff;
 }
 a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #3f71ba;
+  /*color: #3f71ba;*/
+  color: #ffffff;
 }
 h1,
 h2,
@@ -184,8 +185,10 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
-  color: #3f71ba;
+  /*color: #3f71ba;*/
+  color: #ffff00;
   outline: none;
+  background-color: #383838;
 }
 .navbar-custom .navbar-nav > .active > a {
   border-radius: 0;
