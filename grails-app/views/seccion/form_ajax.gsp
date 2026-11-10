@@ -5,7 +5,7 @@
     <elm:notFound elem="Seccion" genero="o" />
 </g:if>
 <g:else>
-    <g:form class="form-horizontal" name="frmSeccion" role="form" action="save" method="POST">
+    <g:form class="form-horizontal" name="frmSeccion" role="form" action="save_ajax" method="POST">
         <g:hiddenField name="id" value="${seccionInstance?.id}" />
 
 
@@ -20,8 +20,6 @@
 
             </span>
         </div>
-
-
 
         <div class="form-group ${hasErrors(bean: seccionInstance, field: 'menu', 'error')} ">
             <span class="grupo">
@@ -113,6 +111,7 @@
     </g:form>
 
     <script type="text/javascript">
+
         var validator = $("#frmSeccion").validate({
             errorClass     : "help-block",
             errorPlacement : function (error, element) {
@@ -127,6 +126,7 @@
                 label.parents(".grupo").removeClass('has-error');
             }
         });
+
         $(".form-control").keydown(function (ev) {
             if (ev.keyCode == 13) {
                 submitForm();

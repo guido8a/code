@@ -113,22 +113,25 @@ class SeccionController extends code.Shield {
      * @render ERROR*[mensaje] cuando no se pudo grabar correctamente, SUCCESS*[mensaje] cuando se grabó correctamente
      */
     def save_ajax() {
-//        println("save seccion  " + params)
-        def seccionInstance = new Seccion()
-        if (params.id) {
-            seccionInstance = Seccion.get(params.id)
-            if (!seccionInstance) {
-                render "ERROR*No se encontró Seccion."
-                return
-            }
+        println("save seccion  " + params)
+
+        def seccion
+
+        if(params.id){
+            seccion = Seccion.get(params.id)
+        }else{
+            seccion = new Seccion()
         }
-        seccionInstance.properties = params
-        if (!seccionInstance.save(flush: true)) {
-            render "ERROR*Ha ocurrido un error al guardar Seccion: " + renderErrors(bean: seccionInstance)
-            return
+
+        seccion.properties = params
+
+        if(!seccion.save(flush: true)){
+            println("error al guardar la seccion " + seccion.errors)
+            render "no_Error al guardar la sección"
+        }else{
+            render "ok_Sección guardada correctamente"
         }
-        render "SUCCESS*${params.id ? 'Actualización' : 'Creación'} de Seccion exitosa."
-        return
+
     } //save para grabar desde ajax
 
     /**
@@ -138,21 +141,15 @@ class SeccionController extends code.Shield {
     def delete_ajax() {
         if (params.id) {
             def seccionInstance = Seccion.get(params.id)
-            if (!seccionInstance) {
-                render "ERROR*No se encontró Seccion."
-                return
-            }
             try {
                 seccionInstance.delete(flush: true)
-                render "SUCCESS*Eliminación de Seccion exitosa."
-                return
+                render "ok_Sección eliminada correctamente."
             } catch (DataIntegrityViolationException e) {
-                render "ERROR*Ha ocurrido un error al eliminar Seccion"
-                return
+                println("error al borrar la sección " + seccionInstance.errors)
+                render "no_Error al borrar la sección"
             }
         } else {
-            render "ERROR*No se encontró Seccion."
-            return
+            render "no_No se encontró la Sección."
         }
     } //delete para eliminar via ajax
 

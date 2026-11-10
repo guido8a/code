@@ -55,23 +55,12 @@
             <tbody>
                 <g:each in="${seccionInstanceList}" status="i" var="seccionInstance">
                     <tr data-id="${seccionInstance.id}">
-                        
                         <td>${fieldValue(bean: seccionInstance, field: "menu")}</td>
-                        
                         <td>${fieldValue(bean: seccionInstance, field: "titulo")}</td>
-                        
                         <td>${fieldValue(bean: seccionInstance, field: "subtitulo")}</td>
-                        
                         <td>${fieldValue(bean: seccionInstance, field: "orden")}</td>
-
                         <td>${seccionInstance?.estado == 'A' ? 'Activo' : 'No Activo' }</td>
-
                         <td>${seccionInstance?.imagen}</td>
-                        
-                        %{--<td>${fieldValue(bean: seccionInstance, field: "estado")}</td>--}%
-                        
-                        %{--<td>${fieldValue(bean: seccionInstance, field: "imagen")}</td>--}%
-                        
                     </tr>
                 </g:each>
             </tbody>
@@ -85,21 +74,19 @@
                 var $form = $("#frmSeccion");
                 var $btn = $("#dlgCreateEdit").find("#btnSave");
                 if ($form.valid()) {
-//                $btn.replaceWith(spinner);
                     $.ajax({
                         type    : "POST",
                         url     : '${createLink(action:'save_ajax')}',
                         data    : $form.serialize(),
                             success : function (msg) {
                         var parts = msg.split("_");
-//                        log(parts[1], parts[0] == "OK" ? "success" : "error"); // log(msg, type, title, hide)
-                        if (parts[0] == "SUCCESS") {
-                            log("Sección creada correctamente","success");
+                        if (parts[0] === "ok") {
+                            log(parts[1],"success");
                             setTimeout(function () {
-                                location.reload(true);
+                                location.reload();
                             }, 500);
                         } else {
-                            log("Error al crear la sección","error");
+                            log(parts[1],"error");
                             return false;
                         }
                     }
@@ -131,9 +118,14 @@
                                     },
                                     success : function (msg) {
                                         var parts = msg.split("_");
-                                        log(parts[1], parts[0] == "OK" ? "success" : "error"); // log(msg, type, title, hide)
-                                        if (parts[0] == "OK") {
-                                            location.reload(true);
+                                        if (parts[0] === "ok") {
+                                            log(parts[1],"success");
+                                            setTimeout(function () {
+                                                location.reload();
+                                            }, 500);
+                                        } else {
+                                            log(parts[1],"error");
+                                            return false;
                                         }
                                     }
                                 });
