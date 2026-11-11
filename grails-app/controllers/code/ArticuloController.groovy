@@ -92,25 +92,7 @@ class ArticuloController extends code.Shield {
         }
     } //show para cargar con ajax en un dialog
 
-    /**
-     * Acción llamada con ajax que muestra un formaulario para crear o modificar un elemento
-     * @return articuloInstance el objeto a modificar cuando se encontró el elemento
-     * @render ERROR*[mensaje] cuando no se encontró el elemento
-     */
-    def form_ajax() {
-        def articuloInstance = new Articulo()
-        if(params.id) {
-            articuloInstance = Articulo.get(params.id)
-            if(!articuloInstance) {
-                render "ERROR*No se encontró Articulo."
-                return
-            }
-        }
-        articuloInstance.properties = params
-        return [articuloInstance: articuloInstance]
-    } //form para cargar con ajax en un dialog
-
-    /**
+   /**
      * Acción llamada con ajax que guarda la información de un elemento
      * @render ERROR*[mensaje] cuando no se pudo grabar correctamente, SUCCESS*[mensaje] cuando se grabó correctamente
      */
